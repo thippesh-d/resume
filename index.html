@@ -87,65 +87,104 @@
       .contact-row { flex-direction: column; gap: 0.5rem; }
       .skills-columns { flex-direction: column; }
     }
-    /* Print Styles for Two-Column Layout and Page Breaking */
+    /* Print Styles - Single Column Layout */
     @media print {
       body {
         background: white;
         color: black;
-        font-size: 12pt;
+        font-size: 11pt;
         margin: 0;
+        padding: 0.5in;
+        line-height: 1.4;
+      }
+      header, section {
+        background: none;
+        box-shadow: none;
         padding: 0;
+        margin: 0 0 1rem 0;
+        border-radius: 0;
+        max-width: none;
+        page-break-inside: avoid;
       }
       header {
-        background: none;
-        box-shadow: none;
-        padding: 1rem 0;
-        margin-bottom: 0.5rem;
-        page-break-after: avoid; /* Keep header and summary together */
-        break-after: avoid; /* CSS Level 3 equivalent for page-break-after */
-      }
-      .summary {
-        column-span: all; /* Ensures it spans both columns in the print layout */
-        break-inside: avoid; /* Prevents breaking within the summary itself */
-        page-break-inside: avoid;
-        page-break-after: avoid; /* Try to keep summary and content immediately following on the same page */
-        break-after: avoid;
-        background: none;
-        box-shadow: none;
-        padding: 1rem 0;
-        margin-bottom: 0.5rem;
-      }
-      main {
-        column-count: 2; /* The core of the two-column print layout */
-        column-gap: 2rem;
-        padding: 1rem;
-        page-break-before: auto; /* Allow main to start on the same page as summary if space allows */
+        margin-bottom: 1.5rem;
+        page-break-after: avoid;
       }
       section {
-        background: none;
-        box-shadow: none;
-        padding: 0.5rem 0;
-        margin: 0 0 1rem 0;
-        break-inside: avoid-column; /* Crucial: Prevents sections from splitting across columns */
-        page-break-inside: avoid; /* Prevents sections from splitting across pages */
-        page-break-after: auto; /* Allow sections to break after if needed for column flow */
+        margin-bottom: 1.2rem;
       }
-      h1, h2, h3 {
-        color: black;
-        margin: 0.2rem 0;
+      h1 {
+        font-size: 18pt;
+        margin: 0 0 0.5rem 0;
+        border-bottom: 2px solid #333;
+        padding-bottom: 0.3rem;
       }
-      .skills-columns { gap: 0.5rem; }
-      ul { margin: 0.2rem 0 0.3rem 1rem; }
-      .contact-row { gap: 0.3rem; }
-      /* Ensure links also print their URLs */
-      a::after {
-        content: " (" attr(href) ")";
+      h2 {
+        font-size: 14pt;
+        margin: 1rem 0 0.5rem 0;
+        border-bottom: 1px solid #666;
+        padding-bottom: 0.2rem;
+        page-break-after: avoid;
+      }
+      h3 {
+        font-size: 12pt;
+        margin: 0.8rem 0 0.3rem 0;
+        page-break-after: avoid;
+      }
+      .role-duration {
+        margin: 0 0 0.5rem 0;
         font-size: 10pt;
-        color: #000;
       }
+      ul {
+        margin: 0.3rem 0 0.8rem 1rem;
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 0.2rem;
+      }
+      .contact-row {
+        gap: 1rem;
+        margin: 0.5rem 0;
+      }
+      .contact-row div {
+        font-size: 10pt;
+      }
+      .skills-columns {
+        display: block;
+        gap: 0;
+      }
+      .skills-columns div {
+        margin-bottom: 1rem;
+        flex: none;
+      }
+      .skills-columns h3 {
+        margin-top: 0.5rem;
+      }
+      /* Remove URL printing for links to save space */
       a {
         color: black;
-        text-decoration: underline;
+        text-decoration: none;
+      }
+      a::after {
+        content: none;
+      }
+      /* Ensure good page breaks */
+      .summary {
+        page-break-after: avoid;
+      }
+      /* Prevent orphaned headings */
+      h2, h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+      /* Keep content together better */
+      section:not(.summary) {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      /* Optimize spacing for print */
+      p {
+        margin: 0.3rem 0;
       }
     }
   </style>
