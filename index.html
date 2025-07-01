@@ -101,37 +101,57 @@
     }
 
     /* Print styles */
-    @media print {
-      body {
-        background: white;
-        color: black;
-        font-size: 12pt;
-        margin: 0;
-        padding: 0;
-      }
-      header, section {
-        background: none;
-        box-shadow: none;
-        padding: 1rem;
-        page-break-inside: avoid;
-      }
-      .contact-row {
-        flex-direction: column;
-        gap: 0.3rem;
-      }
-      a::after {
-        content: " (" attr(href) ")";
-        font-size: 10pt;
-        color: #000;
-      }
-      h1, h2, h3 {
-        color: black;
-      }
-      a {
-        color: black;
-        text-decoration: underline;
-      }
-    }
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  header, section {
+    background: none;
+    box-shadow: none;
+    padding: 1rem 0;
+    margin: 0 0 0.5rem 0; /* reduce spacing between sections */
+    page-break-inside: avoid;
+  }
+
+  section h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .skills-columns {
+    gap: 0.5rem; /* reduce spacing between skill columns */
+  }
+
+  ul {
+    margin-top: 0.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-row {
+    gap: 0.2rem;
+  }
+
+  h1, h2, h3 {
+    color: black;
+    margin: 0.2rem 0;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #000;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}
   </style>
 </head>
 <body>
