@@ -95,12 +95,20 @@
         margin: 0;
         padding: 0;
       }
-      header, .summary {
+      header {
         background: none;
         box-shadow: none;
         padding: 1rem 0;
         margin-bottom: 0.5rem;
         page-break-after: avoid;
+      }
+      .summary {
+        column-span: all;
+        break-after: avoid;
+        background: none;
+        box-shadow: none;
+        padding: 1rem 0;
+        margin-bottom: 0.5rem;
       }
       main {
         column-count: 2;
@@ -145,12 +153,12 @@
     </div>
   </header>
 
-  <section class="summary">
-    <h2>Professional Summary</h2>
-    <p>ServiceNow-certified QA Engineer with over 3 years of experience in automation and manual testing. Skilled in designing scalable test suites using Java and Selenium, and executing regression, integration, and API tests across enterprise platforms. Proven ability to reduce test cycle time and improve defect detection using automation and structured exploratory testing.</p>
-  </section>
-
   <main>
+    <section class="summary">
+      <h2>Professional Summary</h2>
+      <p>ServiceNow-certified QA Engineer with over 3 years of experience in automation and manual testing. Skilled in designing scalable test suites using Java and Selenium, and executing regression, integration, and API tests across enterprise platforms. Proven ability to reduce test cycle time and improve defect detection using automation and structured exploratory testing.</p>
+    </section>
+
     <section>
       <h2>Experience</h2>
       <h3>Software Engineer – Intime Tec, Bengaluru</h3>
