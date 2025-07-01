@@ -87,6 +87,7 @@
       .contact-row { flex-direction: column; gap: 0.5rem; }
       .skills-columns { flex-direction: column; }
     }
+    /* Print Styles for Two-Column Layout and Page Breaking */
     @media print {
       body {
         background: white;
@@ -100,12 +101,14 @@
         box-shadow: none;
         padding: 1rem 0;
         margin-bottom: 0.5rem;
-        page-break-after: avoid;
+        page-break-after: avoid; /* Keep header and summary together */
+        break-after: avoid; /* CSS Level 3 equivalent for page-break-after */
       }
       .summary {
-        column-span: all;
-        break-inside: avoid;
+        column-span: all; /* Ensures it spans both columns in the print layout */
+        break-inside: avoid; /* Prevents breaking within the summary itself */
         page-break-inside: avoid;
+        page-break-after: avoid; /* Try to keep summary and content immediately following on the same page */
         break-after: avoid;
         background: none;
         box-shadow: none;
@@ -113,16 +116,19 @@
         margin-bottom: 0.5rem;
       }
       main {
-        column-count: 2;
+        column-count: 2; /* The core of the two-column print layout */
         column-gap: 2rem;
         padding: 1rem;
+        page-break-before: auto; /* Allow main to start on the same page as summary if space allows */
       }
       section {
         background: none;
         box-shadow: none;
         padding: 0.5rem 0;
         margin: 0 0 1rem 0;
-        break-inside: avoid-column;
+        break-inside: avoid-column; /* Crucial: Prevents sections from splitting across columns */
+        page-break-inside: avoid; /* Prevents sections from splitting across pages */
+        page-break-after: auto; /* Allow sections to break after if needed for column flow */
       }
       h1, h2, h3 {
         color: black;
@@ -131,6 +137,7 @@
       .skills-columns { gap: 0.5rem; }
       ul { margin: 0.2rem 0 0.3rem 1rem; }
       .contact-row { gap: 0.3rem; }
+      /* Ensure links also print their URLs */
       a::after {
         content: " (" attr(href) ")";
         font-size: 10pt;
