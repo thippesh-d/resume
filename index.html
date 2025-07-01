@@ -94,14 +94,14 @@
         color: black;
         font-size: 11pt;
         margin: 0;
-        padding: 0.4in;
-        line-height: 1.3;
+        padding: 0.5in;
+        line-height: 1.4;
       }
       header {
         background: none;
         box-shadow: none;
         padding: 0;
-        margin: 0 0 1rem 0;
+        margin: 0 0 1.2rem 0;
         border-radius: 0;
         max-width: none;
         page-break-inside: avoid;
@@ -109,22 +109,23 @@
         column-span: all; /* Header spans both columns */
       }
       header p {
-        margin: 0.2rem 0;
+        margin: 0.3rem 0;
         font-size: 10pt;
       }
       
       /* Two-column container for main content */
       main {
         column-count: 2;
-        column-gap: 1.5rem;
-        column-fill: balance;
+        column-gap: 2rem;
+        column-fill: auto; /* Changed from balance to auto for better flow */
+        height: auto;
       }
       
       section {
         background: none;
         box-shadow: none;
         padding: 0;
-        margin: 0 0 0.8rem 0;
+        margin: 0 0 1.2rem 0; /* Increased spacing between sections */
         border-radius: 0;
         max-width: none;
         break-inside: avoid-column;
@@ -135,7 +136,7 @@
       /* Summary spans both columns */
       .summary {
         column-span: all;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem; /* More space after summary */
         page-break-after: avoid;
         break-after: avoid;
       }
@@ -172,13 +173,13 @@
         margin-bottom: 0.2rem;
       }
       .contact-row {
-        gap: 0.8rem;
-        margin: 0.3rem 0;
+        gap: 1rem;
+        margin: 0.4rem 0;
         display: flex;
         flex-wrap: wrap;
       }
       .contact-row div {
-        font-size: 9pt;
+        font-size: 10pt;
         margin-right: 0.5rem;
       }
       header p {
@@ -191,12 +192,23 @@
         break-inside: avoid-column;
       }
       .skills-columns div {
-        margin-bottom: 0.8rem;
+        margin-bottom: 1.2rem; /* Increased spacing */
         flex: none;
         break-inside: avoid;
       }
       .skills-columns h3 {
-        margin-top: 0.3rem;
+        margin-top: 0.5rem;
+      }
+      
+      /* Add more spacing to projects and certifications */
+      section:has(h2:contains("Projects")) ul,
+      section:has(h2:contains("Certifications")) ul {
+        margin-bottom: 1.5rem;
+      }
+      
+      section:has(h2:contains("Projects")) li,
+      section:has(h2:contains("Certifications")) li {
+        margin-bottom: 0.5rem;
       }
       /* Remove URL printing for links to save space */
       a {
