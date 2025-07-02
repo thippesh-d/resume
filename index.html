@@ -21,413 +21,724 @@
     <title>Thippesha D – ServiceNow Automation Test Engineer | Resume</title>
 
     <style>
+        /* ServiceNow Brand Colors */
+        :root {
+            --sn-navy: #1f2937;
+            --sn-blue: #0f4c75;
+            --sn-light-blue: #3282b8;
+            --sn-accent: #00c851;
+            --sn-secondary: #ff6900;
+            --sn-background: #f8fafc;
+            --sn-card: #ffffff;
+            --sn-text-primary: #1e293b;
+            --sn-text-secondary: #64748b;
+            --sn-border: #e2e8f0;
+            --sn-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --sn-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --sn-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
         /* Base Styles */
-        body {
-            font-family: Helvetica, Arial, sans-serif;
+        * {
             margin: 0;
-            padding: 2rem;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--sn-background);
+            color: var(--sn-text-primary);
             line-height: 1.6;
-            background: linear-gradient(to right, #e0f7fa, #fce4ec);
-            color: #111;
+            overflow-x: hidden;
         }
 
-        header, section {
-            max-width: 900px;
-            margin: auto;
-            background: #ffffffcc;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+        /* ServiceNow-style header bar */
+        .header-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--sn-navy) 0%, var(--sn-light-blue) 50%, var(--sn-accent) 100%);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        /* Typography */
-        h1, h2, h3 {
-            color: #222;
-            margin-bottom: 0.5rem;
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
+        /* ServiceNow-style header */
+        header {
+            background: var(--sn-card);
+            border-radius: 12px;
+            box-shadow: var(--sn-shadow-lg);
+            border: 1px solid var(--sn-border);
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        header:hover {
+            box-shadow: var(--sn-shadow-xl);
+            transform: translateY(-2px);
+        }
+
+        /* ServiceNow logo-style accent */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--sn-navy), var(--sn-light-blue), var(--sn-accent));
+        }
+
+        /* Name styling */
         h1 {
-            font-size: 2rem;
-            border-bottom: 2px solid #444;
-            padding-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--sn-navy);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            position: relative;
         }
 
-        h2 {
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--sn-text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* ServiceNow-style contact grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
             margin-top: 1.5rem;
-            font-size: 1.4rem;
-            border-bottom: 1px solid #888;
-            padding-bottom: 0.3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--sn-background);
+            border: 1px solid var(--sn-border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-item:hover {
+            border-color: var(--sn-light-blue);
+            background: var(--sn-card);
+            box-shadow: var(--sn-shadow);
+            transform: translateY(-1px);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.75rem;
+            color: var(--sn-light-blue);
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--sn-text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover a {
+            color: var(--sn-light-blue);
+        }
+
+        /* ServiceNow-style sections */
+        section {
+            background: var(--sn-card);
+            border-radius: 12px;
+            box-shadow: var(--sn-shadow);
+            border: 1px solid var(--sn-border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        section:hover {
+            box-shadow: var(--sn-shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        /* Section headers */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--sn-navy);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--sn-border);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--sn-light-blue);
+            transition: width 0.3s ease;
+        }
+
+        section:hover h2::after {
+            width: 120px;
+        }
+
+        /* ServiceNow-style experience timeline */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--sn-border);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            background: var(--sn-background);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--sn-border);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            background: var(--sn-card);
+            border-color: var(--sn-light-blue);
+            box-shadow: var(--sn-shadow);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -2.25rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--sn-light-blue);
+            border: 3px solid var(--sn-card);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover::before {
+            background: var(--sn-accent);
+            transform: scale(1.2);
+            box-shadow: 0 0 0 4px rgba(0, 200, 81, 0.2);
         }
 
         h3 {
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            margin-bottom: 0.1rem;
-        }
-
-        ul {
-            padding-left: 1.2rem;
-        }
-
-        a {
-            color: #0645ad;
-            text-decoration: none;
-        }
-
-        /* Layout Components */
-        .contact-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .contact-row div {
-            white-space: nowrap;
-        }
-
-        .role-duration {
-            font-style: italic;
-            color: #555;
-            margin-top: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--sn-navy);
             margin-bottom: 0.5rem;
         }
 
-        .skills-columns {
-            display: flex;
-            flex-wrap: wrap;
+        .role-duration {
+            display: inline-block;
+            background: var(--sn-light-blue);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* ServiceNow-style skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
-        .skills-columns div {
-            flex: 1 1 250px;
+        .skill-card {
+            background: var(--sn-background);
+            border: 1px solid var(--sn-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--sn-light-blue);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background: var(--sn-card);
+            border-color: var(--sn-light-blue);
+            box-shadow: var(--sn-shadow);
+            transform: translateY(-2px);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-card h3 {
+            color: var(--sn-navy);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* ServiceNow-style lists */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--sn-text-primary);
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--sn-light-blue);
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            background: var(--sn-background);
+            transform: translateX(4px);
+            color: var(--sn-navy);
+        }
+
+        li:hover::before {
+            color: var(--sn-accent);
+            transform: rotate(90deg);
+        }
+
+        /* ServiceNow-style project cards */
+        .project-card {
+            background: var(--sn-background);
+            border: 1px solid var(--sn-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            background: var(--sn-card);
+            border-color: var(--sn-light-blue);
+            box-shadow: var(--sn-shadow);
+            transform: translateY(-2px);
+        }
+
+        .project-title {
+            color: var(--sn-navy);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ServiceNow-style badges */
+        .badge {
+            display: inline-block;
+            background: var(--sn-light-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: var(--sn-navy);
+            transform: scale(1.05);
+        }
+
+        /* Certification cards */
+        .cert-card {
+            background: linear-gradient(135deg, var(--sn-background) 0%, #f1f5f9 100%);
+            border: 1px solid var(--sn-border);
+            border-left: 4px solid var(--sn-accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            background: var(--sn-card);
+            border-left-color: var(--sn-secondary);
+            box-shadow: var(--sn-shadow);
+            transform: translateX(4px);
+        }
+
+        .cert-title {
+            color: var(--sn-navy);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-details {
+            color: var(--sn-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Soft skills grid */
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .soft-skill-item {
+            background: var(--sn-background);
+            border: 1px solid var(--sn-border);
+            border-radius: 25px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .soft-skill-item:hover {
+            background: var(--sn-light-blue);
+            color: white;
+            border-color: var(--sn-light-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--sn-shadow);
+        }
+
+        /* Professional summary */
+        .summary-content {
+            background: linear-gradient(135deg, var(--sn-background) 0%, #f8fafc 100%);
+            border-radius: 8px;
+            padding: 2rem;
+            border-left: 4px solid var(--sn-light-blue);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Education section */
+        .education-item {
+            background: var(--sn-background);
+            border: 1px solid var(--sn-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            background: var(--sn-card);
+            border-color: var(--sn-light-blue);
+            box-shadow: var(--sn-shadow);
+            transform: translateY(-2px);
+        }
+
+        /* Links */
+        a {
+            color: var(--sn-light-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--sn-navy);
         }
 
         /* Responsive Design */
-        @media (max-width: 600px) {
-            body {
+        @media (max-width: 768px) {
+            .container {
                 padding: 1rem;
             }
 
-            .contact-row {
-                flex-direction: column;
-                gap: 0.5rem;
+            h1 {
+                font-size: 2rem;
             }
 
-            .skills-columns {
-                flex-direction: column;
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .soft-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .experience-timeline {
+                padding-left: 1rem;
             }
         }
 
         /* Print Styles */
         @media print {
             body {
-                margin: 0;
-                padding: 0.5in;
-                line-height: 1.4;
-                font-size: 11pt;
+                background: white;
                 color: black;
-                background: none;
+            }
+
+            .header-bar {
+                display: none;
             }
 
             header, section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-                padding: 0;
-                margin: 0 0 1.2rem 0;
-                background: none;
+                background: white;
                 box-shadow: none;
-                border-radius: 0;
-                max-width: none;
-            }
-
-            header p {
-                margin: 0.3rem 0;
-                font-size: 10pt;
-            }
-
-            /* Main content layout */
-            main {
-                column-count: 1;
-                column-gap: 2rem;
-                height: auto;
-            }
-
-            section {
-                break-inside: avoid-column;
+                border: 1px solid #ccc;
                 page-break-inside: avoid;
-                -webkit-column-break-inside: avoid;
+                margin-bottom: 1rem;
             }
 
-            /* Summary spans full width */
-            .summary {
-                column-span: all;
-                margin-bottom: 1.5rem;
-                page-break-after: avoid;
-                break-after: avoid;
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            /* Typography for print */
-            h1 {
-                font-size: 16pt;
-                margin: 0 0 0.3rem 0;
-                border-bottom: 2px solid #333;
-                padding-bottom: 0.2rem;
-            }
-
-            h2 {
-                font-size: 13pt;
-                margin: 0.8rem 0 0.4rem 0;
-                border-bottom: 1px solid #666;
-                padding-bottom: 0.1rem;
-                page-break-after: avoid;
-            }
-
-            h3 {
-                font-size: 12pt;
-                margin: 0.8rem 0 0.3rem 0;
-                page-break-after: avoid;
-            }
-
-            .role-duration {
-                margin: 0 0 0.5rem 0;
-                font-size: 10pt;
-            }
-
-            ul {
-                margin: 0.3rem 0 0.8rem 1rem;
-                padding-left: 0;
-            }
-
-            li {
-                margin-bottom: 0.2rem;
-            }
-
-            .contact-row {
-                gap: 1rem;
-                margin: 0.4rem 0;
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-            .contact-row div {
-                font-size: 10pt;
-                margin-right: 0.5rem;
-            }
-
-            /* Skills section for print */
-            .skills-columns {
-                display: block;
-                gap: 0;
-                break-inside: avoid-column;
-            }
-
-            .skills-columns div {
-                margin-bottom: 1.2rem;
-                flex: none;
-                break-inside: avoid;
-            }
-
-            .skills-columns h3 {
-                margin-top: 0.5rem;
-            }
-
-            /* Enhanced spacing for projects and certifications */
-            section:has(h2:contains("Projects")) ul,
-            section:has(h2:contains("Certifications")) ul {
-                margin-bottom: 1.5rem;
-            }
-
-            section:has(h2:contains("Projects")) li,
-            section:has(h2:contains("Certifications")) li {
-                margin-bottom: 0.5rem;
-            }
-
-            /* Link styling for print */
-            a {
-                color: black;
-                text-decoration: none;
-            }
-
-            a::after {
-                content: none;
-            }
-
-            /* Ensure proper page breaks */
-            header {
-                break-inside: avoid;
-                page-break-inside: avoid;
-                keep-together: always;
-            }
-
-            .summary {
-                page-break-before: avoid;
-                break-before: avoid;
-                margin-top: 0;
-            }
-
-            h2, h3 {
-                break-after: avoid;
-                page-break-after: avoid;
-            }
-
-            section:not(.summary) {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
-            p {
-                margin: 0.3rem 0;
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
 </head>
 
 <body>
-<header>
-    <h1>Thippesha D</h1>
-    <p><em>Bengaluru, India • Open to Remote/Hybrid Roles</em></p>
+<div class="header-bar"></div>
 
-    <div class="contact-row">
-        <div>Phone: <a href="tel:7090120237">+91-XXXXXXXXXX</a></div>
-        <div>Email: <a href="mailto:thippeshad95@gmail.com">XXXXXXXXXX@gmail.com</a></div>
-        <div>Website: <a href="https://resume.thippesha.in">resume.thippesha.in</a></div>
-        <div>GitHub: <a href="https://github.com/thippesh-d">github.com/thippesh-d</a></div>
-        <div>LinkedIn: <a href="https://www.linkedin.com/in/thippesha">linkedin.com/in/thippesha</a></div>
-    </div>
-</header>
-
-<main>
-    <section class="summary">
-        <h2>Professional Summary</h2>
-        <p>
-            ServiceNow-certified QA Engineer with over 3 years of experience in automation and manual testing.
-            Skilled in designing scalable test suites using Java and Selenium, and executing regression, integration,
-            and API tests across enterprise platforms. Proven ability to reduce test cycle time and improve defect
-            detection using automation and structured exploratory testing.
+<div class="container">
+    <header>
+        <h1>Thippesha D</h1>
+        <p class="subtitle">ServiceNow Certified System Administrator & Automation Test Engineer</p>
+        <p style="text-align: center; color: var(--sn-text-secondary); margin-bottom: 1rem;">
+            📍 Bengaluru, India • 🌐 Open to Remote/Hybrid Roles
         </p>
-    </section>
 
-    <section>
-        <h2>Experience</h2>
-
-        <h3>Software Engineer – Intime Tec, Bengaluru</h3>
-        <p class="role-duration">Oct 2023 – Present</p>
-        <ul>
-            <li>Automated 90% of ServiceNow test cases using Selenium and Java, reducing manual testing time by 60%</li>
-            <li>Integrated ATF for 20+ modules with CI/CD pipeline for pre-deployment validations</li>
-            <li>Created and maintained reusable test suites, increasing efficiency of release testing</li>
-            <li>Generated over 25 UAT reports for cross-functional teams and stakeholders</li>
-        </ul>
-
-        <h3>Junior Software Engineer – Intime Tec, Bengaluru</h3>
-        <p class="role-duration">Oct 2022 – Oct 2023</p>
-        <ul>
-            <li>Designed automated test scenarios using ServiceNow ATF across ITSM modules</li>
-            <li>Performed REST API and UI integration testing with external systems</li>
-            <li>Identified and reported over 100 defects with detailed logs and recommendations</li>
-        </ul>
-
-        <h3>Trainee Engineer – Pacecom Technologies, Bengaluru</h3>
-        <p class="role-duration">Oct 2021 – Aug 2022</p>
-        <ul>
-            <li>Manually tested AI-driven platforms and flagged inconsistencies in training data</li>
-            <li>Collaborated with developers to improve model prediction accuracy</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Skills</h2>
-        <div class="skills-columns">
-            <div>
-                <h3>Manual Testing</h3>
-                <ul>
-                    <li>Functional & Regression Testing</li>
-                    <li>End-to-End & UAT Testing</li>
-                    <li>Integration & API Testing</li>
-                    <li>Defect Tracking & Reporting</li>
-                </ul>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <a href="tel:7090120237">+91-XXXXXXXXXX</a>
             </div>
-
-            <div>
-                <h3>Automation</h3>
-                <ul>
-                    <li>ServiceNow ATF</li>
-                    <li>Selenium with Java</li>
-                    <li>Test Suite Design</li>
-                    <li>CI/CD Integration</li>
-                </ul>
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <a href="mailto:thippeshad95@gmail.com">XXXXXXXXXX@gmail.com</a>
             </div>
-
-            <div>
-                <h3>Domain</h3>
-                <ul>
-                    <li>ITSM & ITIL Framework</li>
-                    <li>ServiceNow Platform</li>
-                    <li>Incident, Change & Asset Management</li>
-                </ul>
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <a href="https://resume.thippesha.in">resume.thippesha.in</a>
             </div>
-
-            <div>
-                <h3>Tools & Tech</h3>
-                <ul>
-                    <li>Git, GitHub</li>
-                    <li>Terminal, Bash, Windows CMD</li>
-                    <li>Java, HTML/CSS/JS</li>
-                    <li>Selenium, XPath</li>
-                </ul>
+            <div class="contact-item">
+                <div class="contact-icon">💻</div>
+                <a href="https://github.com/thippesh-d">github.com/thippesh-d</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">💼</div>
+                <a href="https://www.linkedin.com/in/thippesha">linkedin.com/in/thippesha</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <strong>ServiceNow Test Suite Automation</strong> – Built modular test framework using Selenium + Java
-                for regression testing across 4 releases.
-            </li>
-            <li>
-                <strong>Email Flow Automation</strong> – Integrated Microsoft Power Automate with test scripts to
-                trigger notifications based on test results.
-            </li>
-        </ul>
-    </section>
+    <main>
+        <section>
+            <h2>Professional Summary</h2>
+            <div class="summary-content">
+                ServiceNow-certified QA Engineer with over 3 years of experience in automation and manual testing.
+                Specialized in designing scalable test suites using Java and Selenium, and executing regression, integration,
+                and API tests across enterprise platforms. Proven ability to reduce test cycle time and improve defect
+                detection using automation and structured exploratory testing within the ServiceNow ecosystem.
+            </div>
+        </section>
 
-    <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>
-                <strong>ITIL Foundation Level</strong> – PeopleCert (Nov 2024) | ID: GR671714965TD
-            </li>
-            <li>
-                <strong>Certified ScrumMaster (CSM)</strong> – Scrum Alliance (Jun 2023) | ID: 1803461
-            </li>
-            <li>
-                <strong>ServiceNow Certified System Administrator</strong> – Nasscom FutureSkills (Sep 2023) |
-                ID: FSP/2024/7/4940852
-            </li>
-        </ul>
-    </section>
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3>Software Engineer – Intime Tec, Bengaluru</h3>
+                    <div class="role-duration">Oct 2023 – Present</div>
+                    <ul>
+                        <li>Automated 90% of ServiceNow test cases using Selenium and Java, reducing manual testing time by 60%</li>
+                        <li>Integrated ATF for 20+ modules with CI/CD pipeline for pre-deployment validations</li>
+                        <li>Created and maintained reusable test suites, increasing efficiency of release testing</li>
+                        <li>Generated over 25 UAT reports for cross-functional teams and stakeholders</li>
+                    </ul>
+                </div>
 
-    <section>
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Time Management</li>
-            <li>Problem Solving</li>
-            <li>Analytical Thinking</li>
-            <li>Team Management</li>
-        </ul>
-    </section>
+                <div class="experience-item">
+                    <h3>Junior Software Engineer – Intime Tec, Bengaluru</h3>
+                    <div class="role-duration">Oct 2022 – Oct 2023</div>
+                    <ul>
+                        <li>Designed automated test scenarios using ServiceNow ATF across ITSM modules</li>
+                        <li>Performed REST API and UI integration testing with external systems</li>
+                        <li>Identified and reported over 100 defects with detailed logs and recommendations</li>
+                    </ul>
+                </div>
 
-    <section>
-        <h2>Education</h2>
-        <p>
-            <strong>Bachelor of Engineering – Electronics & Communication</strong><br>
-            Visvesvaraya Technological University, Belagavi, India (2021)
-        </p>
-    </section>
-</main>
+                <div class="experience-item">
+                    <h3>Trainee Engineer – Pacecom Technologies, Bengaluru</h3>
+                    <div class="role-duration">Oct 2021 – Aug 2022</div>
+                    <ul>
+                        <li>Manually tested AI-driven platforms and flagged inconsistencies in training data</li>
+                        <li>Collaborated with developers to improve model prediction accuracy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Manual Testing</h3>
+                    <ul>
+                        <li>Functional & Regression Testing</li>
+                        <li>End-to-End & UAT Testing</li>
+                        <li>Integration & API Testing</li>
+                        <li>Defect Tracking & Reporting</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Test Automation</h3>
+                    <ul>
+                        <li>ServiceNow ATF</li>
+                        <li>Selenium with Java</li>
+                        <li>Test Suite Design</li>
+                        <li>CI/CD Integration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>ServiceNow Platform</h3>
+                    <ul>
+                        <li>ITSM & ITIL Framework</li>
+                        <li>ServiceNow Administration</li>
+                        <li>Incident, Change & Asset Management</li>
+                        <li>Workflow Development</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Git, GitHub</li>
+                        <li>Terminal, Bash, Windows CMD</li>
+                        <li>Java, HTML/CSS/JavaScript</li>
+                        <li>Selenium WebDriver, XPath</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Projects</h2>
+            <div class="project-card">
+                <div class="project-title">ServiceNow Test Suite Automation</div>
+                <p>Built modular test framework using Selenium + Java for regression testing across 4 releases.
+                    Implemented automated test execution with comprehensive reporting and CI/CD integration.</p>
+                <div style="margin-top: 1rem;">
+                    <span class="badge">Selenium</span>
+                    <span class="badge">Java</span>
+                    <span class="badge">ServiceNow</span>
+                    <span class="badge">CI/CD</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Email Flow Automation</div>
+                <p>Integrated Microsoft Power Automate with test scripts to trigger notifications based on test results.
+                    Automated stakeholder communication and test result distribution.</p>
+                <div style="margin-top: 1rem;">
+                    <span class="badge">Power Automate</span>
+                    <span class="badge">Email Integration</span>
+                    <span class="badge">Automation</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <div class="cert-card">
+                <div class="cert-title">ServiceNow Certified System Administrator</div>
+                <div class="cert-details">Nasscom FutureSkills (Sep 2023) | ID: FSP/2024/7/4940852</div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-title">ITIL Foundation Level</div>
+                <div class="cert-details">PeopleCert (Nov 2024) | ID: GR671714965TD</div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-title">Certified ScrumMaster (CSM)</div>
+                <div class="cert-details">Scrum Alliance (Jun 2023) | ID: 1803461</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Core Competencies</h2>
+            <div class="soft-skills-grid">
+                <div class="soft-skill-item">⏰ Time Management</div>
+                <div class="soft-skill-item">🧩 Problem Solving</div>
+                <div class="soft-skill-item">🧠 Analytical Thinking</div>
+                <div class="soft-skill-item">👥 Team Leadership</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Engineering – Electronics & Communication</h3>
+                <p style="color: var(--sn-text-secondary); margin-top: 0.5rem;">
+                    Visvesvaraya Technological University, Belagavi, India<br>
+                    <strong>Graduated:</strong> 2021
+                </p>
+            </div>
+        </section>
+    </main>
+</div>
 </body>
 </html>

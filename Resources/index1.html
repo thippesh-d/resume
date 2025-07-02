@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Thippesha D | ServiceNow & Automation Test Engineer Resume" />
+    <meta property="og:description" content="Resume of Thippesha D, certified ServiceNow System Administrator and Software Engineer with 3+ years of experience in automation and ITSM testing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://resume.thippesha.in" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/thippesh-d/resume/main/Preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Standard Meta Tags -->
+    <meta name="description" content="Resume of Thippesha D – Software Engineer specialized in testing, automation, and ITSM." />
+    <meta name="keywords" content="Thippesha D, Resume, Software Engineer, ServiceNow, Automation Testing, Manual Testing, ITSM, ITIL, Selenium, GitHub" />
+    <meta name="author" content="Thippesha D" />
+
+    <title>Thippesha D – ServiceNow Automation Test Engineer | Resume</title>
+
+    <style>
+        /* CSS Variables for theme colors */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --accent-color: #06b6d4;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Base Styles with enhanced background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.2;0.1" dur="5s" repeatCount="indefinite"/></circle></svg>');
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Container with enhanced styling */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Floating header with glassmorphism */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(-10px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(-10px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Gradient text for name */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+            text-align: center;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Enhanced section cards */
+        section {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover effects for sections */
+        section:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
+
+        /* Section hover glow effect */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        section:hover::before {
+            left: 100%;
+        }
+
+        /* Typography enhancements */
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0 0 1.5rem 0;
+            color: var(--primary-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        section:hover h2::before {
+            width: 8px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem 0;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        section:hover h3 {
+            color: var(--primary-color);
+        }
+
+        /* Contact information with interactive elements */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+        }
+
+        .contact-item a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover a {
+            color: var(--primary-color);
+        }
+
+        /* Enhanced skills grid */
+        .skills-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .skill-category h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Interactive list items */
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding: 0.5rem 0 0.5rem 2rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        li::before {
+            content: '▶';
+            position: absolute;
+            left: 0.5rem;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: scale(0.8);
+        }
+
+        li:hover {
+            transform: translateX(8px);
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 8px;
+            padding-left: 2.5rem;
+        }
+
+        li:hover::before {
+            transform: scale(1.2) rotate(90deg);
+            color: var(--primary-color);
+        }
+
+        /* Experience timeline effect */
+        .experience-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover::before {
+            background: var(--accent-color);
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+
+        /* Role duration styling */
+        .role-duration {
+            font-style: italic;
+            color: var(--text-light);
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+            background: rgba(107, 114, 128, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover .role-duration {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        /* Professional summary enhancement */
+        .summary {
+            text-align: center;
+            position: relative;
+        }
+
+        .summary p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Project cards */
+        .project-item {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(37, 99, 235, 0.1));
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(6, 182, 212, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .project-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: right 0.6s;
+        }
+
+        .project-item:hover::after {
+            right: 100%;
+        }
+
+        /* Certification badges */
+        .cert-item {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(37, 99, 235, 0.1));
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cert-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
+            border-left-width: 8px;
+        }
+
+        /* Soft skills with icons */
+        .soft-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .soft-skill {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .soft-skill:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Links styling */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .skills-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .soft-skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            header, section {
+                background: white;
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+            }
+
+            h1 {
+                color: black;
+                -webkit-text-fill-color: initial;
+            }
+
+            .contact-item {
+                background: white;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>Thippesha D</h1>
+        <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin: 1rem 0;">
+            <em>Bengaluru, India • Open to Remote/Hybrid Roles</em>
+        </p>
+
+        <div class="contact-row">
+            <div class="contact-item">
+                <a href="tel:7090120237">📞 +91-XXXXXXXXXX</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:thippeshad95@gmail.com">✉️ XXXXXXXXXX@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://resume.thippesha.in">🌐 resume.thippesha.in</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://github.com/thippesh-d">💻 github.com/thippesh-d</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.linkedin.com/in/thippesha">💼 linkedin.com/in/thippesha</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>
+                ServiceNow-certified QA Engineer with over 3 years of experience in automation and manual testing.
+                Skilled in designing scalable test suites using Java and Selenium, and executing regression, integration,
+                and API tests across enterprise platforms. Proven ability to reduce test cycle time and improve defect
+                detection using automation and structured exploratory testing.
+            </p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+
+            <div class="experience-item">
+                <h3>Software Engineer – Intime Tec, Bengaluru</h3>
+                <p class="role-duration">Oct 2023 – Present</p>
+                <ul>
+                    <li>Automated 90% of ServiceNow test cases using Selenium and Java, reducing manual testing time by 60%</li>
+                    <li>Integrated ATF for 20+ modules with CI/CD pipeline for pre-deployment validations</li>
+                    <li>Created and maintained reusable test suites, increasing efficiency of release testing</li>
+                    <li>Generated over 25 UAT reports for cross-functional teams and stakeholders</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Junior Software Engineer – Intime Tec, Bengaluru</h3>
+                <p class="role-duration">Oct 2022 – Oct 2023</p>
+                <ul>
+                    <li>Designed automated test scenarios using ServiceNow ATF across ITSM modules</li>
+                    <li>Performed REST API and UI integration testing with external systems</li>
+                    <li>Identified and reported over 100 defects with detailed logs and recommendations</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Trainee Engineer – Pacecom Technologies, Bengaluru</h3>
+                <p class="role-duration">Oct 2021 – Aug 2022</p>
+                <ul>
+                    <li>Manually tested AI-driven platforms and flagged inconsistencies in training data</li>
+                    <li>Collaborated with developers to improve model prediction accuracy</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-columns">
+                <div class="skill-category">
+                    <h3>Manual Testing</h3>
+                    <ul>
+                        <li>Functional & Regression Testing</li>
+                        <li>End-to-End & UAT Testing</li>
+                        <li>Integration & API Testing</li>
+                        <li>Defect Tracking & Reporting</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Automation</h3>
+                    <ul>
+                        <li>ServiceNow ATF</li>
+                        <li>Selenium with Java</li>
+                        <li>Test Suite Design</li>
+                        <li>CI/CD Integration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Domain</h3>
+                    <ul>
+                        <li>ITSM & ITIL Framework</li>
+                        <li>ServiceNow Platform</li>
+                        <li>Incident, Change & Asset Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Tech</h3>
+                    <ul>
+                        <li>Git, GitHub</li>
+                        <li>Terminal, Bash, Windows CMD</li>
+                        <li>Java, HTML/CSS/JS</li>
+                        <li>Selenium, XPath</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="project-item">
+                <strong>ServiceNow Test Suite Automation</strong> – Built modular test framework using Selenium + Java
+                for regression testing across 4 releases.
+            </div>
+            <div class="project-item">
+                <strong>Email Flow Automation</strong> – Integrated Microsoft Power Automate with test scripts to
+                trigger notifications based on test results.
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <div class="cert-item">
+                <strong>ITIL Foundation Level</strong> – PeopleCert (Nov 2024) | ID: GR671714965TD
+            </div>
+            <div class="cert-item">
+                <strong>Certified ScrumMaster (CSM)</strong> – Scrum Alliance (Jun 2023) | ID: 1803461
+            </div>
+            <div class="cert-item">
+                <strong>ServiceNow Certified System Administrator</strong> – Nasscom FutureSkills (Sep 2023) |
+                ID: FSP/2024/7/4940852
+            </div>
+        </section>
+
+        <section>
+            <h2>Soft Skills</h2>
+            <div class="soft-skills">
+                <div class="soft-skill">⏰ Time Management</div>
+                <div class="soft-skill">🧩 Problem Solving</div>
+                <div class="soft-skill">🧠 Analytical Thinking</div>
+                <div class="soft-skill">👥 Team Management</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <p style="background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                <strong>Bachelor of Engineering – Electronics & Communication</strong><br>
+                Visvesvaraya Technological University, Belagavi, India (2021)
+            </p>
+        </section>
+    </main>
+</div>
+</body>
+</html>
