@@ -1,368 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <meta property="og:title" content="Thippesha D | ServiceNow & Automation Test Engineer Resume" />
-  <meta property="og:description" content="Resume of Thippesha D, certified ServiceNow System Administrator and Software Engineer with 3+ years of experience in automation and ITSM testing." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://resume.thippesha.in" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/thippesh-d/resume/main/Preview.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  
-  <meta name="description" content="Resume of Thippesha D – Software Engineer specialized in testing, automation, and ITSM." />
-  <meta name="keywords" content="Thippesha D, Resume, Software Engineer, ServiceNow, Automation Testing, Manual Testing, ITSM, ITIL, Selenium, GitHub" />
-  <meta name="author" content="Thippesha D" />
-  <title>Thippesha D – ServiceNow Automation Test Engineer | Resume</title>
-  <style>
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
-      background: linear-gradient(to right, #e0f7fa, #fce4ec);
-      color: #111;
-    }
-    header, section {
-      max-width: 900px;
-      margin: auto;
-      background: #ffffffcc;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
-    h1, h2, h3 {
-      color: #222;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: 2rem;
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.5rem;
-    }
-    h2 {
-      margin-top: 1.5rem;
-      font-size: 1.4rem;
-      border-bottom: 1px solid #888;
-      padding-bottom: 0.3rem;
-    }
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 1rem;
-      margin-bottom: 0.1rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    a {
-      color: #0645ad;
-      text-decoration: none;
-    }
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 0.5rem;
-    }
-    .contact-row div {
-      white-space: nowrap;
-    }
-    .role-duration {
-      font-style: italic;
-      color: #555;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-    }
-    .skills-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .skills-columns div {
-      flex: 1 1 250px;
-    }
-    @media (max-width: 600px) {
-      body { padding: 1rem; }
-      .contact-row { flex-direction: column; gap: 0.5rem; }
-      .skills-columns { flex-direction: column; }
-    }
-    /* Print Styles - Two Column Layout */
-    @media print {
-      body {
-        background: white;
-        color: black;
-        font-size: 11pt;
-        margin: 0;
-        padding: 0.5in;
-        line-height: 1.4;
-      }
-      header {
-        background: none;
-        box-shadow: none;
-        padding: 0;
-        margin: 0 0 1.2rem 0;
-        border-radius: 0;
-        max-width: none;
-        page-break-inside: avoid;
-        break-inside: avoid;
-        column-span: all; /* Header spans both columns */
-      }
-      header p {
-        margin: 0.3rem 0;
-        font-size: 10pt;
-      }
-      
-      /* Two-column container for main content */
-      main {
-        column-count: 1;
-        column-gap: 2rem;
-        column-fill: auto; /* Changed from balance to auto for better flow */
-        height: auto;
-      }
-      
-      section {
-        background: none;
-        box-shadow: none;
-        padding: 0;
-        margin: 0 0 1.2rem 0; /* Increased spacing between sections */
-        border-radius: 0;
-        max-width: none;
-        break-inside: avoid-column;
-        page-break-inside: avoid;
-        -webkit-column-break-inside: avoid;
-      }
-      
-      /* Summary spans both columns */
-      .summary {
-        column-span: all;
-        margin-bottom: 1.5rem; /* More space after summary */
-        page-break-after: avoid;
-        break-after: avoid;
-      }
-      section {
-        margin-bottom: 1.2rem;
-      }
-      h1 {
-        font-size: 16pt;
-        margin: 0 0 0.3rem 0;
-        border-bottom: 2px solid #333;
-        padding-bottom: 0.2rem;
-      }
-      h2 {
-        font-size: 13pt;
-        margin: 0.8rem 0 0.4rem 0;
-        border-bottom: 1px solid #666;
-        padding-bottom: 0.1rem;
-        page-break-after: avoid;
-      }
-      h3 {
-        font-size: 12pt;
-        margin: 0.8rem 0 0.3rem 0;
-        page-break-after: avoid;
-      }
-      .role-duration {
-        margin: 0 0 0.5rem 0;
-        font-size: 10pt;
-      }
-      ul {
-        margin: 0.3rem 0 0.8rem 1rem;
-        padding-left: 0;
-      }
-      li {
-        margin-bottom: 0.2rem;
-      }
-      .contact-row {
-        gap: 1rem;
-        margin: 0.4rem 0;
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .contact-row div {
-        font-size: 10pt;
-        margin-right: 0.5rem;
-      }
-      header p {
-        margin: 0.2rem 0;
-        font-size: 10pt;
-      }
-      .skills-columns {
-        display: block;
-        gap: 0;
-        break-inside: avoid-column;
-      }
-      .skills-columns div {
-        margin-bottom: 1.2rem; /* Increased spacing */
-        flex: none;
-        break-inside: avoid;
-      }
-      .skills-columns h3 {
-        margin-top: 0.5rem;
-      }
-      
-      /* Add more spacing to projects and certifications */
-      section:has(h2:contains("Projects")) ul,
-      section:has(h2:contains("Certifications")) ul {
-        margin-bottom: 1.5rem;
-      }
-      
-      section:has(h2:contains("Projects")) li,
-      section:has(h2:contains("Certifications")) li {
-        margin-bottom: 0.5rem;
-      }
-      /* Remove URL printing for links to save space */
-      a {
-        color: black;
-        text-decoration: none;
-      }
-      a::after {
-        content: none;
-      }
-      /* Ensure header stays together */
-      header {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        keep-together: always;
-      }
-      
-      /* Keep Professional Summary close to header */
-      .summary {
-        page-break-before: avoid;
-        break-before: avoid;
-        margin-top: 0;
-      }
-      /* Prevent orphaned headings */
-      h2, h3 {
-        break-after: avoid;
-        page-break-after: avoid;
-      }
-      /* Keep content together better */
-      section:not(.summary) {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      /* Optimize spacing for print */
-      p {
-        margin: 0.3rem 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Thippesha D | ServiceNow & Automation Test Engineer Resume" />
+    <meta property="og:description" content="Resume of Thippesha D, certified ServiceNow System Administrator and Software Engineer with 3+ years of experience in automation and ITSM testing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://resume.thippesha.in" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/thippesh-d/resume/main/Preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Standard Meta Tags -->
+    <meta name="description" content="Resume of Thippesha D – Software Engineer specialized in testing, automation, and ITSM." />
+    <meta name="keywords" content="Thippesha D, Resume, Software Engineer, ServiceNow, Automation Testing, Manual Testing, ITSM, ITIL, Selenium, GitHub" />
+    <meta name="author" content="Thippesha D" />
+
+    <title>Thippesha D – ServiceNow Automation Test Engineer | Resume</title>
+
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+            background: linear-gradient(to right, #e0f7fa, #fce4ec);
+            color: #111;
+        }
+
+        header, section {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffffcc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            border-bottom: 2px solid #444;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            margin-top: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #888;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.1rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+
+        /* Layout Components */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-row div {
+            white-space: nowrap;
+        }
+
+        .role-duration {
+            font-style: italic;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .skills-columns div {
+            flex: 1 1 250px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .contact-row {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .skills-columns {
+                flex-direction: column;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0.5in;
+                line-height: 1.4;
+                font-size: 11pt;
+                color: black;
+                background: none;
+            }
+
+            header, section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                padding: 0;
+                margin: 0 0 1.2rem 0;
+                background: none;
+                box-shadow: none;
+                border-radius: 0;
+                max-width: none;
+            }
+
+            header p {
+                margin: 0.3rem 0;
+                font-size: 10pt;
+            }
+
+            /* Main content layout */
+            main {
+                column-count: 1;
+                column-gap: 2rem;
+                height: auto;
+            }
+
+            section {
+                break-inside: avoid-column;
+                page-break-inside: avoid;
+                -webkit-column-break-inside: avoid;
+            }
+
+            /* Summary spans full width */
+            .summary {
+                column-span: all;
+                margin-bottom: 1.5rem;
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Typography for print */
+            h1 {
+                font-size: 16pt;
+                margin: 0 0 0.3rem 0;
+                border-bottom: 2px solid #333;
+                padding-bottom: 0.2rem;
+            }
+
+            h2 {
+                font-size: 13pt;
+                margin: 0.8rem 0 0.4rem 0;
+                border-bottom: 1px solid #666;
+                padding-bottom: 0.1rem;
+                page-break-after: avoid;
+            }
+
+            h3 {
+                font-size: 12pt;
+                margin: 0.8rem 0 0.3rem 0;
+                page-break-after: avoid;
+            }
+
+            .role-duration {
+                margin: 0 0 0.5rem 0;
+                font-size: 10pt;
+            }
+
+            ul {
+                margin: 0.3rem 0 0.8rem 1rem;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 0.2rem;
+            }
+
+            .contact-row {
+                gap: 1rem;
+                margin: 0.4rem 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .contact-row div {
+                font-size: 10pt;
+                margin-right: 0.5rem;
+            }
+
+            /* Skills section for print */
+            .skills-columns {
+                display: block;
+                gap: 0;
+                break-inside: avoid-column;
+            }
+
+            .skills-columns div {
+                margin-bottom: 1.2rem;
+                flex: none;
+                break-inside: avoid;
+            }
+
+            .skills-columns h3 {
+                margin-top: 0.5rem;
+            }
+
+            /* Enhanced spacing for projects and certifications */
+            section:has(h2:contains("Projects")) ul,
+            section:has(h2:contains("Certifications")) ul {
+                margin-bottom: 1.5rem;
+            }
+
+            section:has(h2:contains("Projects")) li,
+            section:has(h2:contains("Certifications")) li {
+                margin-bottom: 0.5rem;
+            }
+
+            /* Link styling for print */
+            a {
+                color: black;
+                text-decoration: none;
+            }
+
+            a::after {
+                content: none;
+            }
+
+            /* Ensure proper page breaks */
+            header {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                keep-together: always;
+            }
+
+            .summary {
+                page-break-before: avoid;
+                break-before: avoid;
+                margin-top: 0;
+            }
+
+            h2, h3 {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            section:not(.summary) {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            p {
+                margin: 0.3rem 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header>
+<header>
     <h1>Thippesha D</h1>
     <p><em>Bengaluru, India • Open to Remote/Hybrid Roles</em></p>
-    
+
     <div class="contact-row">
-      <div>Phone: <a href="tel:7090120237">+91-XXXXXXXXXX</a></div>
-      <div>Email: <a href="mailto:thippeshad95@gmail.com">XXXXXXXXXX@gmail.com</a></div>
-      <div>Website: <a href="https://resume.thippesha.in">resume.thippesha.in</a></div>
-      <div>GitHub: <a href="https://github.com/thippesh-d">github.com/thippesh-d</a></div>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/thippesha">linkedin.com/in/thippesha</a></div>
+        <div>Phone: <a href="tel:7090120237">+91-XXXXXXXXXX</a></div>
+        <div>Email: <a href="mailto:thippeshad95@gmail.com">XXXXXXXXXX@gmail.com</a></div>
+        <div>Website: <a href="https://resume.thippesha.in">resume.thippesha.in</a></div>
+        <div>GitHub: <a href="https://github.com/thippesh-d">github.com/thippesh-d</a></div>
+        <div>LinkedIn: <a href="https://www.linkedin.com/in/thippesha">linkedin.com/in/thippesha</a></div>
     </div>
-  </header>
+</header>
 
-  <main>
+<main>
     <section class="summary">
-      <h2>Professional Summary</h2>
-      <p>ServiceNow-certified QA Engineer with over 3 years of experience in automation and manual testing. Skilled in designing scalable test suites using Java and Selenium, and executing regression, integration, and API tests across enterprise platforms. Proven ability to reduce test cycle time and improve defect detection using automation and structured exploratory testing.</p>
+        <h2>Professional Summary</h2>
+        <p>
+            ServiceNow-certified QA Engineer with over 3 years of experience in automation and manual testing.
+            Skilled in designing scalable test suites using Java and Selenium, and executing regression, integration,
+            and API tests across enterprise platforms. Proven ability to reduce test cycle time and improve defect
+            detection using automation and structured exploratory testing.
+        </p>
     </section>
 
     <section>
-      <h2>Experience</h2>
-      <h3>Software Engineer – Intime Tec, Bengaluru</h3>
-      <p class="role-duration">Oct 2023 – Present</p>
-      <ul>
-        <li>Automated 90% of ServiceNow test cases using Selenium and Java, reducing manual testing time by 60%</li>
-        <li>Integrated ATF for 20+ modules with CI/CD pipeline for pre-deployment validations</li>
-        <li>Created and maintained reusable test suites, increasing efficiency of release testing</li>
-        <li>Generated over 25 UAT reports for cross-functional teams and stakeholders</li>
-      </ul>
-      <h3>Junior Software Engineer – Intime Tec, Bengaluru</h3>
-      <p class="role-duration">Oct 2022 – Oct 2023</p>
-      <ul>
-        <li>Designed automated test scenarios using ServiceNow ATF across ITSM modules</li>
-        <li>Performed REST API and UI integration testing with external systems</li>
-        <li>Identified and reported over 100 defects with detailed logs and recommendations</li>
-      </ul>
-      <h3>Trainee Engineer – Pacecom Technologies, Bengaluru</h3>
-      <p class="role-duration">Oct 2021 – Aug 2022</p>
-      <ul>
-        <li>Manually tested AI-driven platforms and flagged inconsistencies in training data</li>
-        <li>Collaborated with developers to improve model prediction accuracy</li>
-      </ul>
+        <h2>Experience</h2>
+
+        <h3>Software Engineer – Intime Tec, Bengaluru</h3>
+        <p class="role-duration">Oct 2023 – Present</p>
+        <ul>
+            <li>Automated 90% of ServiceNow test cases using Selenium and Java, reducing manual testing time by 60%</li>
+            <li>Integrated ATF for 20+ modules with CI/CD pipeline for pre-deployment validations</li>
+            <li>Created and maintained reusable test suites, increasing efficiency of release testing</li>
+            <li>Generated over 25 UAT reports for cross-functional teams and stakeholders</li>
+        </ul>
+
+        <h3>Junior Software Engineer – Intime Tec, Bengaluru</h3>
+        <p class="role-duration">Oct 2022 – Oct 2023</p>
+        <ul>
+            <li>Designed automated test scenarios using ServiceNow ATF across ITSM modules</li>
+            <li>Performed REST API and UI integration testing with external systems</li>
+            <li>Identified and reported over 100 defects with detailed logs and recommendations</li>
+        </ul>
+
+        <h3>Trainee Engineer – Pacecom Technologies, Bengaluru</h3>
+        <p class="role-duration">Oct 2021 – Aug 2022</p>
+        <ul>
+            <li>Manually tested AI-driven platforms and flagged inconsistencies in training data</li>
+            <li>Collaborated with developers to improve model prediction accuracy</li>
+        </ul>
     </section>
+
     <section>
-      <h2>Skills</h2>
-      <div class="skills-columns">
-        <div>
-          <h3>Manual Testing</h3>
-          <ul>
-            <li>Functional & Regression Testing</li>
-            <li>End-to-End & UAT Testing</li>
-            <li>Integration & API Testing</li>
-            <li>Defect Tracking & Reporting</li>
-          </ul>
+        <h2>Skills</h2>
+        <div class="skills-columns">
+            <div>
+                <h3>Manual Testing</h3>
+                <ul>
+                    <li>Functional & Regression Testing</li>
+                    <li>End-to-End & UAT Testing</li>
+                    <li>Integration & API Testing</li>
+                    <li>Defect Tracking & Reporting</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Automation</h3>
+                <ul>
+                    <li>ServiceNow ATF</li>
+                    <li>Selenium with Java</li>
+                    <li>Test Suite Design</li>
+                    <li>CI/CD Integration</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Domain</h3>
+                <ul>
+                    <li>ITSM & ITIL Framework</li>
+                    <li>ServiceNow Platform</li>
+                    <li>Incident, Change & Asset Management</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Tools & Tech</h3>
+                <ul>
+                    <li>Git, GitHub</li>
+                    <li>Terminal, Bash, Windows CMD</li>
+                    <li>Java, HTML/CSS/JS</li>
+                    <li>Selenium, XPath</li>
+                </ul>
+            </div>
         </div>
-        <div>
-          <h3>Automation</h3>
-          <ul>
-            <li>ServiceNow ATF</li>
-            <li>Selenium with Java</li>
-            <li>Test Suite Design</li>
-            <li>CI/CD Integration</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Domain</h3>
-          <ul>
-            <li>ITSM & ITIL Framework</li>
-            <li>ServiceNow Platform</li>
-            <li>Incident, Change & Asset Management</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Tools & Tech</h3>
-          <ul>
-            <li>Git, GitHub</li>
-            <li>Terminal, Bash, Windows CMD</li>
-            <li>Java, HTML/CSS/JS</li>
-            <li>Selenium, XPath</li>
-          </ul>
-        </div>
-      </div>
     </section>
+
     <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>ServiceNow Test Suite Automation</strong> – Built modular test framework using Selenium + Java for regression testing across 4 releases.</li>
-        <li><strong>Email Flow Automation</strong> – Integrated Microsoft Power Automate with test scripts to trigger notifications based on test results.</li>
-      </ul>
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong>ServiceNow Test Suite Automation</strong> – Built modular test framework using Selenium + Java
+                for regression testing across 4 releases.
+            </li>
+            <li>
+                <strong>Email Flow Automation</strong> – Integrated Microsoft Power Automate with test scripts to
+                trigger notifications based on test results.
+            </li>
+        </ul>
     </section>
+
     <section>
-      <h2>Certifications</h2>
-      <ul>
-        <li><strong>ITIL Foundation Level</strong> – PeopleCert (Nov 2024) | ID: GR671714965TD</li>
-        <li><strong>Certified ScrumMaster (CSM)</strong> – Scrum Alliance (Jun 2023) | ID: 1803461</li>
-        <li><strong>ServiceNow Certified System Administrator</strong> – Nasscom FutureSkills (Sep 2023) | ID: FSP/2024/7/4940852</li>
-      </ul>
+        <h2>Certifications</h2>
+        <ul>
+            <li>
+                <strong>ITIL Foundation Level</strong> – PeopleCert (Nov 2024) | ID: GR671714965TD
+            </li>
+            <li>
+                <strong>Certified ScrumMaster (CSM)</strong> – Scrum Alliance (Jun 2023) | ID: 1803461
+            </li>
+            <li>
+                <strong>ServiceNow Certified System Administrator</strong> – Nasscom FutureSkills (Sep 2023) |
+                ID: FSP/2024/7/4940852
+            </li>
+        </ul>
     </section>
+
     <section>
-      <h2>Soft Skills</h2>
-      <ul>
-        <li>Time Management</li>
-        <li>Problem Solving</li>
-        <li>Analytical Thinking</li>
-        <li>Team Management</li>
-      </ul>
+        <h2>Soft Skills</h2>
+        <ul>
+            <li>Time Management</li>
+            <li>Problem Solving</li>
+            <li>Analytical Thinking</li>
+            <li>Team Management</li>
+        </ul>
     </section>
+
     <section>
-      <h2>Education</h2>
-      <p><strong>Bachelor of Engineering – Electronics & Communication</strong><br>
-      Visvesvaraya Technological University, Belagavi, India (2021)</p>
+        <h2>Education</h2>
+        <p>
+            <strong>Bachelor of Engineering – Electronics & Communication</strong><br>
+            Visvesvaraya Technological University, Belagavi, India (2021)
+        </p>
     </section>
-  </main>
+</main>
 </body>
 </html>
