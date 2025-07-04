@@ -388,17 +388,141 @@
             box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
         }
 
-        @media (max-width: 768px) {
+        /* Mobile First Approach - Base styles for mobile */
+        @media (max-width: 480px) {
+            .container {
+                margin: 5px;
+                border-radius: 8px;
+            }
+
+            .header {
+                padding: 25px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+                margin-bottom: 8px;
+            }
+
+            .header .subtitle {
+                font-size: 1em;
+                margin-bottom: 20px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .contact-btn {
+                padding: 10px 20px;
+                font-size: 12px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .section {
+                margin-bottom: 30px;
+            }
+
+            .section h2 {
+                font-size: 1.4em;
+                margin-bottom: 20px;
+            }
+
+            .experience-item {
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .company-info h3 {
+                font-size: 1.1em;
+            }
+
+            .duration {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+
+            .position {
+                padding: 8px 15px;
+                font-size: 0.9em;
+                margin: 10px 0;
+            }
+
+            .responsibilities ul {
+                padding-left: 20px;
+            }
+
+            .responsibilities li {
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .skill-category {
+                padding: 20px 15px;
+            }
+
+            .skill-category h4 {
+                font-size: 1.1em;
+            }
+
+            .certifications {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .cert-item {
+                padding: 20px 15px;
+            }
+
+            .cert-item h4 {
+                font-size: 1.1em;
+            }
+
+            .soft-skills {
+                gap: 8px;
+            }
+
+            .soft-skill {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+
+            .education {
+                padding: 20px 15px;
+            }
+
+            .servicenow-badge {
+                display: block;
+                margin: 5px 0;
+                text-align: center;
+            }
+        }
+
+        /* Tablet styles */
+        @media (min-width: 481px) and (max-width: 768px) {
             .container {
                 margin: 10px;
             }
 
-            .content {
-                padding: 30px 20px;
-            }
-
             .header {
-                padding: 40px 20px;
+                padding: 35px 25px;
             }
 
             .header h1 {
@@ -406,29 +530,115 @@
             }
 
             .contact-buttons {
-                flex-direction: column;
-                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .contact-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            .content {
+                padding: 30px 25px;
             }
 
             .experience-header {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 12px;
             }
 
             .duration {
-                margin-top: 15px;
+                margin-top: 0;
             }
 
             .experience-item {
-                padding: 20px;
+                padding: 25px 20px;
             }
 
             .skills-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .certifications {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 900px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certifications {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Large desktop styles */
+        @media (min-width: 1025px) {
+            .container {
+                max-width: 1000px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certifications {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* High DPI screens */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .header::before {
+                background-size: 20px 20px;
+            }
+        }
+
+        /* Portrait orientation specific */
+        @media (orientation: portrait) and (max-width: 768px) {
+            .contact-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .contact-btn {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        /* Landscape orientation for mobile */
+        @media (orientation: landscape) and (max-height: 600px) {
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .contact-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .contact-btn {
+                flex: 1;
+                min-width: 80px;
+                padding: 8px 12px;
+                font-size: 11px;
             }
         }
     </style>
