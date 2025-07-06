@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Thippesha D - Resume</title>
     <style>
         * {
@@ -16,15 +20,20 @@
             line-height: 1.6;
             color: #2c3e50;
             background: #f5f7fa;
-            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            width: 100%;
-            min-height: 100vh;
+            max-width: 1000px;
+            margin: 20px auto;
             background: white;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
             overflow: hidden;
+            border: 1px solid #e1e8ed;
         }
 
         .header {
@@ -85,6 +94,8 @@
             font-size: 14px;
             font-weight: 500;
             backdrop-filter: blur(10px);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .contact-btn:hover {
@@ -96,8 +107,6 @@
 
         .content {
             padding: 50px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .section {
@@ -122,68 +131,6 @@
             height: 3px;
             background: linear-gradient(90deg, #10b981, #059669);
             border-radius: 2px;
-        }
-
-        .professional-summary {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .professional-summary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #10b981, #059669);
-            border-radius: 12px 12px 0 0;
-        }
-
-        .professional-summary h3 {
-            color: #1f2937;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .professional-summary p {
-            color: #4b5563;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .key-achievements {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .achievement-item {
-            background: rgba(16, 185, 129, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-        }
-
-        .achievement-item h4 {
-            color: #1f2937;
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .achievement-item p {
-            color: #6b7280;
-            font-size: 0.95em;
-            margin: 0;
         }
 
         .experience-item {
@@ -453,140 +400,124 @@
 
         /* Mobile First Approach - Base styles for mobile */
         @media (max-width: 480px) {
+            .container {
+                margin: 5px;
+                border-radius: 8px;
+            }
+            
             .header {
                 padding: 25px 15px;
             }
-
+            
             .header h1 {
-                font-size: 2.2em;
+                font-size: 1.8em;
                 margin-bottom: 8px;
             }
-
+            
             .header .subtitle {
                 font-size: 1em;
                 margin-bottom: 20px;
             }
-
+            
             .contact-buttons {
                 flex-direction: column;
                 gap: 8px;
             }
-
+            
             .contact-btn {
                 padding: 10px 20px;
                 font-size: 12px;
                 width: 100%;
                 text-align: center;
             }
-
+            
             .content {
                 padding: 20px 15px;
             }
-
+            
             .section {
                 margin-bottom: 30px;
             }
-
+            
             .section h2 {
-                font-size: 1.6em;
+                font-size: 1.4em;
                 margin-bottom: 20px;
             }
-
-            .professional-summary {
-                padding: 25px 20px;
-            }
-
-            .professional-summary h3 {
-                font-size: 1.3em;
-            }
-
-            .professional-summary p {
-                font-size: 1em;
-            }
-
-            .key-achievements {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .achievement-item {
-                padding: 15px;
-            }
-
+            
             .experience-item {
-                padding: 20px 15px;
+                padding: 15px;
                 margin-bottom: 25px;
             }
-
+            
             .experience-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
             }
-
+            
             .company-info h3 {
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
-
+            
             .duration {
                 padding: 6px 12px;
                 font-size: 0.8em;
             }
-
+            
             .position {
                 padding: 8px 15px;
                 font-size: 0.9em;
                 margin: 10px 0;
             }
-
+            
             .responsibilities ul {
                 padding-left: 20px;
             }
-
+            
             .responsibilities li {
                 font-size: 0.9em;
                 margin-bottom: 8px;
             }
-
+            
             .skills-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-
+            
             .skill-category {
                 padding: 20px 15px;
             }
-
+            
             .skill-category h4 {
                 font-size: 1.1em;
             }
-
+            
             .certifications {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-
+            
             .cert-item {
                 padding: 20px 15px;
             }
-
+            
             .cert-item h4 {
                 font-size: 1.1em;
             }
-
+            
             .soft-skills {
                 gap: 8px;
             }
-
+            
             .soft-skill {
                 padding: 8px 15px;
                 font-size: 0.85em;
             }
-
+            
             .education {
                 padding: 20px 15px;
             }
-
+            
             .servicenow-badge {
                 display: block;
                 margin: 5px 0;
@@ -596,108 +527,84 @@
 
         /* Tablet styles */
         @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
             .header {
                 padding: 35px 25px;
             }
-
+            
             .header h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
             }
-
+            
             .contact-buttons {
                 flex-wrap: wrap;
                 gap: 10px;
             }
-
+            
             .contact-btn {
                 flex: 1;
                 min-width: 120px;
             }
-
+            
             .content {
                 padding: 30px 25px;
             }
-
-            .professional-summary {
-                padding: 35px 25px;
-            }
-
-            .key-achievements {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
+            
             .experience-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 12px;
             }
-
+            
             .duration {
                 margin-top: 0;
             }
-
+            
             .experience-item {
                 padding: 25px 20px;
             }
-
+            
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-
+            
             .certifications {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
         }
 
         /* Desktop styles */
-        @media (min-width: 769px) {
-            .header {
-                padding: 60px 40px;
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 900px;
             }
-
-            .header h1 {
-                font-size: 3.5em;
-            }
-
-            .content {
-                padding: 60px 40px;
-            }
-
-            .professional-summary {
-                padding: 50px 40px;
-            }
-
-            .key-achievements {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
+            
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
+            
             .certifications {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         /* Large desktop styles */
-        @media (min-width: 1200px) {
-            .header h1 {
-                font-size: 4em;
+        @media (min-width: 1025px) {
+            .container {
+                max-width: 1000px;
             }
-
-            .content {
-                padding: 80px 60px;
-            }
-
-            .professional-summary {
-                padding: 60px 50px;
-            }
-
+            
             .skills-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certifications {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -714,7 +621,7 @@
                 flex-direction: column;
                 width: 100%;
             }
-
+            
             .contact-btn {
                 width: 100%;
                 margin: 0;
@@ -726,17 +633,17 @@
             .header {
                 padding: 20px 15px;
             }
-
+            
             .header h1 {
-                font-size: 2em;
+                font-size: 1.6em;
             }
-
+            
             .contact-buttons {
                 flex-direction: row;
                 flex-wrap: wrap;
                 gap: 8px;
             }
-
+            
             .contact-btn {
                 flex: 1;
                 min-width: 80px;
@@ -747,197 +654,187 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <div class="header-content">
-            <h1>Thippesha D</h1>
-            <div class="subtitle">ServiceNow Test Automation Specialist</div>
-            <div class="contact-buttons">
-                <a href="tel:7090120237" class="contact-btn">📞 Call</a>
-                <a href="mailto:thippeshad95@gmail.com" class="contact-btn">✉️ Email</a>
-                <a href="https://www.github.com/thippesh-d" class="contact-btn" target="_blank">🐙 GitHub</a>
-                <a href="https://www.linkedin.com/in/thippesha/" class="contact-btn" target="_blank">💼 LinkedIn</a>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Thippesha D</h1>
+                <div class="subtitle">ServiceNow Test Automation Specialist</div>
+                <div class="contact-buttons">
+                    <a href="tel:7090120237" class="contact-btn">📞 Call</a>
+                    <a href="mailto:thippeshad95@gmail.com" class="contact-btn">✉️ Email</a>
+                    <a href="https://www.github.com/thippesh-d" class="contact-btn" target="_blank">🐙 GitHub</a>
+                    <a href="https://www.linkedin.com/in/thippesha/" class="contact-btn" target="_blank">💼 LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>Intime Tec <span class="servicenow-badge">ServiceNow Partner</span></h3>
+                            <p>Bengaluru, India</p>
+                        </div>
+                        <div class="duration">2 Years 10 Months</div>
+                    </div>
+                    
+                    <div class="position">Software Engineer</div>
+                    <p><strong>October 2023 - Present (1 Year 11 Months)</strong></p>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Executed comprehensive end-to-end testing of ServiceNow applications, ensuring platform reliability and performance</li>
+                            <li>Developed and maintained automated test frameworks using Java Selenium, improving testing efficiency by 40%</li>
+                            <li>Orchestrated integration testing between ServiceNow and external systems, ensuring seamless data flow</li>
+                            <li>Generated detailed client reports and dashboards, providing actionable insights on system performance</li>
+                            <li>Architected comprehensive test suites for various ServiceNow modules including ITSM, ITOM, and CSM</li>
+                            <li>Led release testing initiatives, ensuring zero-defect deployments to production environments</li>
+                            <li>Implemented robust regression testing protocols to maintain application stability across updates</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="position">Junior Software Engineer</div>
+                    <p><strong>October 2022 - October 2023 (1 Year 1 Month)</strong></p>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Performed comprehensive functional testing of ServiceNow applications across multiple instances</li>
+                            <li>Automated critical test scenarios using ServiceNow's Automated Test Framework (ATF)</li>
+                            <li>Validated integration points between ServiceNow and third-party systems using REST/SOAP APIs</li>
+                            <li>Conducted thorough REST API testing ensuring proper data exchange and system communications</li>
+                            <li>Delivered comprehensive test reports and metrics to stakeholders and clients</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>Pacecom Technologies Pvt Ltd</h3>
+                            <p>Bengaluru, India</p>
+                        </div>
+                        <div class="duration">11 Months</div>
+                    </div>
+                    
+                    <div class="position">Trainee Engineer</div>
+                    <p><strong>October 2021 - August 2022 (11 Months)</strong></p>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Conducted manual testing of AI-powered applications, focusing on data accuracy and system behavior</li>
+                            <li>Identified and documented system defects with detailed reproduction steps and impact analysis</li>
+                            <li>Collaborated with development teams to resolve critical issues and improve application quality</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>ServiceNow Testing</h4>
+                        <ul>
+                            <li>ServiceNow Platform Testing</li>
+                            <li>ITSM Module Testing</li>
+                            <li>Automated Test Framework (ATF)</li>
+                            <li>ServiceNow Integrations</li>
+                            <li>Instance Management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Test Automation</h4>
+                        <ul>
+                            <li>Java Selenium Framework</li>
+                            <li>REST API Testing</li>
+                            <li>Test Script Development</li>
+                            <li>CI/CD Integration</li>
+                            <li>Performance Testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Quality Assurance</h4>
+                        <ul>
+                            <li>Functional Testing</li>
+                            <li>Integration Testing</li>
+                            <li>End-to-End Testing</li>
+                            <li>Regression Testing</li>
+                            <li>Defect Management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Tools & Technologies</h4>
+                        <ul>
+                            <li>Java & Selenium WebDriver</li>
+                            <li>Git & GitHub</li>
+                            <li>Linux Command Line</li>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>XPath & CSS Selectors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Professional Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-item">
+                        <h4>ITIL Foundation Level</h4>
+                        <div class="cert-details">
+                            <p><strong>Issued By:</strong> PeopleCert</p>
+                            <p><strong>Date:</strong> November 2024</p>
+                            <p><strong>Credential ID:</strong> GR671714965TD</p>
+                            <p><em>Industry standard for IT Service Management practices</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-item">
+                        <h4>ServiceNow Certified System Administrator</h4>
+                        <div class="cert-details">
+                            <p><strong>Issued By:</strong> Nasscom FutureSkills</p>
+                            <p><strong>Date:</strong> September 2023</p>
+                            <p><strong>Credential ID:</strong> FSP/2024/7/4940852</p>
+                            <p><em>Expertise in ServiceNow platform administration and configuration</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-item">
+                        <h4>Certified ScrumMaster (CSM)</h4>
+                        <div class="cert-details">
+                            <p><strong>Issued By:</strong> Scrum Alliance</p>
+                            <p><strong>Date:</strong> June 2023</p>
+                            <p><strong>Credential ID:</strong> 1803461</p>
+                            <p><em>Agile project management and team leadership certification</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Core Competencies</h2>
+                <div class="soft-skills">
+                    <div class="soft-skill">Agile Leadership</div>
+                    <div class="soft-skill">Problem Resolution</div>
+                    <div class="soft-skill">System Analysis</div>
+                    <div class="soft-skill">Team Collaboration</div>
+                    <div class="soft-skill">Process Optimization</div>
+                    <div class="soft-skill">Client Relations</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <div class="education">
+                    <h4>Bachelor of Engineering in Electronics and Communication</h4>
+                    <p><strong>Institution:</strong> Visvesvaraya Technological University, Belagavi, India</p>
+                    <p><strong>Graduation Year:</strong> 2021</p>
+                    <p><strong>Relevant Coursework:</strong> Software Engineering, System Design, Digital Communications</p>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="content">
-        <div class="section">
-            <h2>Professional Summary</h2>
-            <div class="professional-summary">
-                <h3>ServiceNow Testing & Automation Expert</h3>
-                <p>
-                    Results-driven ServiceNow Test Automation Specialist with 3+ years of comprehensive experience in quality assurance, test automation, and platform testing. Proven track record of delivering high-quality solutions for enterprise ServiceNow implementations, with expertise spanning ITSM, ITOM, and CSM modules.
-                </p>
-                <p>
-                    Specialized in developing robust automated testing frameworks using Java Selenium and ServiceNow's ATF, resulting in 40% improvement in testing efficiency. Adept at orchestrating complex integration testing scenarios and ensuring seamless system communications across multiple platforms.
-                </p>
-                
-                <div class="key-achievements">
-                    <div class="achievement-item">
-                        <h4>Testing Excellence</h4>
-                        <p>Executed 500+ test cases across multiple ServiceNow instances with 99.2% accuracy rate</p>
-                    </div>
-                    <div class="achievement-item">
-                        <h4>Automation Impact</h4>
-                        <p>Improved testing efficiency by 40% through automated framework development</p>
-                    </div>
-                    <div class="achievement-item">
-                        <h4>Zero-Defect Deployments</h4>
-                        <p>Led release testing initiatives ensuring flawless production deployments</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Professional Experience</h2>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3>Intime Tec <span class="servicenow-badge">ServiceNow Partner</span></h3>
-                        <p>Bengaluru, India</p>
-                    </div>
-                    <div class="duration">2 Years 10 Months</div>
-                </div>
-
-                <div class="position">Software Engineer</div>
-                <p><strong>October 2023 - Present (1 Year 11 Months)</strong></p>
-                <div class="responsibilities">
-                    <ul>
-                        <li>Executed comprehensive end-to-end testing of ServiceNow applications, ensuring platform reliability and performance</li>
-                        <li>Developed and maintained automated test frameworks using Java Selenium, improving testing efficiency by 40%</li>
-                        <li>Orchestrated integration testing between ServiceNow and external systems, ensuring seamless data flow</li>
-                        <li>Generated detailed client reports and dashboards, providing actionable insights on system performance</li>
-                        <li>Architected comprehensive test suites for various ServiceNow modules including ITSM, ITOM, and CSM</li>
-                        <li>Led release testing initiatives, ensuring zero-defect deployments to production environments</li>
-                        <li>Implemented robust regression testing protocols to maintain application stability across updates</li>
-                    </ul>
-                </div>
-
-                <div class="position">Junior Software Engineer</div>
-                <p><strong>October 2022 - October 2023 (1 Year 1 Month)</strong></p>
-                <div class="responsibilities">
-                    <ul>
-                        <li>Performed comprehensive functional testing of ServiceNow applications across multiple instances</li>
-                        <li>Automated critical test scenarios using ServiceNow's Automated Test Framework (ATF)</li>
-                        <li>Validated integration points between ServiceNow and third-party systems using REST/SOAP APIs</li>
-                        <li>Conducted thorough REST API testing ensuring proper data exchange and system communications</li>
-                        <li>Delivered comprehensive test reports and metrics to stakeholders and clients</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3>Pacecom Technologies Pvt Ltd</h3>
-                        <p>Bengaluru, India</p>
-                    </div>
-                    <div class="duration">11 Months</div>
-                </div>
-
-                <div class="position">Trainee Engineer</div>
-                <p><strong>October 2021 - August 2022 (11 Months)</strong></p>
-                <div class="responsibilities">
-                    <ul>
-                        <li>Conducted manual testing of AI-powered applications, focusing on data accuracy and system behavior</li>
-                        <li>Identified and documented system defects with detailed reproduction steps and impact analysis</li>
-                        <li>Collaborated with development teams to resolve critical issues and improve application quality</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>ServiceNow Testing</h4>
-                    <ul>
-                        <li>ServiceNow Platform Testing</li>
-                        <li>ITSM Module Testing</li>
-                        <li>Automated Test Framework (ATF)</li>
-                        <li>ServiceNow Integrations</li>
-                        <li>Instance Management</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Test Automation</h4>
-                    <ul>
-                        <li>Java Selenium Framework</li>
-                        <li>REST API Testing</li>
-                        <li>Test Script Development</li>
-                        <li>CI/CD Integration</li>
-                        <li>Performance Testing</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Quality Assurance</h4>
-                    <ul>
-                        <li>Functional Testing</li>
-                        <li>Integration Testing</li>
-                        <li>End-to-End Testing</li>
-                        <li>Regression Testing</li>
-                        <li>Defect Management</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Tools & Technologies</h4>
-                    <ul>
-                        <li>Java & Selenium WebDriver</li>
-                        <li>Git & GitHub</li>
-                        <li>Linux Command Line</li>
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>XPath & CSS Selectors</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Professional Certifications</h2>
-            <div class="certifications">
-                <div class="cert-item">
-                    <h4>ITIL Foundation Level</h4>
-                    <div class="cert-details">
-                        <p><strong>Issued By:</strong> PeopleCert</p>
-                        <p><strong>Date:</strong> November 2024</p>
-                        <p><strong>Credential ID:</strong> GR671714965TD</p>
-                        <p><em>Industry standard for IT Service Management practices</em></p>
-                    </div>
-                </div>
-
-                <div class="cert-item">
-                    <h4>ServiceNow Certified System Administrator</h4>
-                    <div class="cert-details">
-                        <p><strong>Issued By:</strong> Nasscom FutureSkills</p>
-                        <p><strong>Date:</strong> September 2023</p>
-                        <p><strong>Credential ID:</strong> FSP/2024/7/4940852</p>
-                        <p><em>Expertise in ServiceNow platform administration and configuration</em></p>
-                    </div>
-                </div>
-
-                <div class="cert-item">
-                    <h4>Certified ScrumMaster (CSM)</h4>
-                    <div class="cert-details">
-                        <p><strong>Issued By:</strong> Scrum Alliance</p>
-                        <p><strong>Date:</strong> June 2023</p>
-                        <p><strong>Credential ID:</strong> 1803461</p>
-                        <p><em>Agile project management and team leadership certification</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Core Competencies</h2>
-            <div class="soft-skills">
-                <div class="soft-skill">Agile Leadership</div>
-                <div class="soft-skill">Problem Resolution</div>
-                <div class="soft-skill">System Analysis</div>
-                <div class="soft-skill">Team
+</body>
+</html>
