@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Thippesha D - Resume</title>
+
+    <title>Thippesha D – ServiceNow Test Automation Specialist</title>
+    <meta name="description" content="3+ years automating ServiceNow at In Time Tec. ITIL 4 Foundation, CSA, Certified ScrumMaster. Java Selenium, ATF, REST API testing specialist based in Bengaluru.">
+
+    <!-- ── OPEN GRAPH ── -->
+    <meta property="og:type"        content="profile">
+    <meta property="og:title"       content="Thippesha D – ServiceNow Test Automation Specialist">
+    <meta property="og:description" content="3+ years automating ServiceNow at In Time Tec. ITIL 4, CSA, CSM certified. Java Selenium · ATF · REST API · Bengaluru, India.">
+    <meta property="og:url"         content="https://resume.thippesha.in/">
+    <meta property="og:image"       content="https://og-image.vercel.app/Thippesha%20D.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-white.svg&widths=350&heights=300">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- ── TWITTER / X ── -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Thippesha D – ServiceNow Test Automation Specialist">
+    <meta name="twitter:description" content="3+ years automating ServiceNow at In Time Tec. ITIL 4, CSA, CSM certified.">
+    <meta name="twitter:url"         content="https://resume.thippesha.in/">
+
+    <!-- ── HTMX ── -->
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+    <!-- ── CACHE BUSTING — increment CACHE_V when you push new fragments ── -->
+    <script>
+        const CACHE_V = '1';
+        document.addEventListener('htmx:configRequest', e => {
+            e.detail.path = e.detail.path + '?v=' + CACHE_V;
+        });
+    </script>
+
     <style>
         /* ── THEME TOKENS ── */
         :root {
@@ -44,7 +72,7 @@
             --shadow-page:   0 4px 20px rgba(0,0,0,0.4);
         }
 
-        /* ── RESET & BASE ── */
+        /* ── RESET ── */
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Source Sans Pro','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
@@ -58,7 +86,7 @@
         /* ── READING PROGRESS ── */
         #read-progress {
             position: fixed; top:0; left:0;
-            width: 0%; height: 3px;
+            width:0%; height:3px;
             background: linear-gradient(90deg, var(--accent), var(--accent-dark));
             z-index: 9999;
             transition: width 0.1s linear;
@@ -85,8 +113,7 @@
             overflow: hidden;
         }
         .header::before {
-            content:'';
-            position:absolute; inset:0;
+            content:''; position:absolute; inset:0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             opacity: 0.3;
         }
@@ -119,20 +146,17 @@
         .contact-buttons { display:flex; justify-content:center; gap:15px; margin-top:30px; flex-wrap:wrap; }
         .contact-btn {
             background:rgba(16,185,129,0.1);
-            color:var(--accent);
-            text-decoration:none;
+            color:var(--accent); text-decoration:none;
             padding:12px 24px; border-radius:6px;
             border:2px solid rgba(16,185,129,0.3);
             font-size:14px; font-weight:500;
             transition:all 0.3s; position:relative;
-            backdrop-filter:blur(10px); cursor:pointer;
-            font-family:inherit;
+            backdrop-filter:blur(10px); cursor:pointer; font-family:inherit;
         }
         .contact-btn:hover { background:var(--accent); color:white; transform:translateY(-2px); box-shadow:0 8px 25px rgba(16,185,129,0.3); }
 
         .copy-tick {
-            display:none;
-            position:absolute; top:-28px; left:50%;
+            display:none; position:absolute; top:-28px; left:50%;
             transform:translateX(-50%);
             background:var(--accent); color:white;
             font-size:11px; padding:3px 8px; border-radius:4px; white-space:nowrap;
@@ -147,38 +171,85 @@
         /* ── CONTENT ── */
         .content { padding:50px 40px; }
         .section  { margin-bottom:50px; }
-        .section h2 {
+
+        /* section header row — h2 + optional toggle button */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+        .section-header h2 {
+            color:var(--text-primary); font-size:2em;
+            position:relative; padding-bottom:15px; font-weight:300;
+            margin-bottom: 0;
+        }
+        .section-header h2::after {
+            content:''; position:absolute; bottom:0; left:0;
+            width:60px; height:3px;
+            background:linear-gradient(90deg, var(--accent), var(--accent-dark));
+            border-radius:2px;
+        }
+        /* standalone h2 (sections without toggle) */
+        .section > h2 {
             color:var(--text-primary); font-size:2em;
             margin-bottom:30px; position:relative;
             padding-bottom:15px; font-weight:300;
         }
-        .section h2::after {
+        .section > h2::after {
             content:''; position:absolute; bottom:0; left:0;
             width:60px; height:3px;
             background:linear-gradient(90deg, var(--accent), var(--accent-dark));
             border-radius:2px;
         }
 
+        /* ── VIEW TOGGLE BUTTON ── */
+        .view-toggle {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 7px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-family: inherit;
+            transition: all 0.25s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+        .view-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .view-toggle.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* ── SKELETON ── */
         .skeleton {
             background:linear-gradient(90deg, var(--border) 25%, var(--bg-card) 50%, var(--border) 75%);
             background-size:200% 100%;
             animation:shimmer 1.4s infinite;
             border-radius:8px; height:120px;
         }
-        @keyframes shimmer {
-            0%   { background-position: 200% 0; }
-            100% { background-position:-200% 0; }
-        }
+        @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
 
-        /* ── EXPERIENCE ── */
+        /* ── EXPERIENCE CARDS ── */
         .experience-item {
             margin-bottom:40px; padding:30px;
             background:var(--bg-card);
             border-radius:12px; border:1px solid var(--border);
-            box-shadow:var(--shadow-card); transition:all 0.3s; position:relative;
+            box-shadow:var(--shadow-card);
+            transition:all 0.35s; position:relative;
         }
         .experience-item:hover { transform:translateY(-2px); box-shadow:var(--shadow-hover); background:var(--bg-card-hover); }
         .experience-item::before { content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--accent),var(--accent-dark)); border-radius:0 2px 2px 0; }
+
         .experience-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; flex-wrap:wrap; }
         .company-info h3 { color:var(--text-primary); font-size:1.4em; margin-bottom:5px; font-weight:600; }
         .company-info p  { color:var(--text-muted); font-style:italic; font-size:0.95em; }
@@ -188,6 +259,96 @@
         .responsibilities ul { padding-left:25px; }
         .responsibilities li { margin-bottom:12px; color:var(--text-secondary); line-height:1.7; }
         .responsibilities li::marker { color:var(--accent); font-weight:bold; }
+
+        /* timeline-dot and tl-meta hidden in card view */
+        .timeline-dot { display:none; }
+        .tl-meta      { display:none; }
+
+        /* ═══════════════════════════════════
+           TIMELINE VIEW
+        ═══════════════════════════════════ */
+        #experience-container.timeline-view {
+            position: relative;
+            padding-left: 44px;
+        }
+
+        /* vertical spine */
+        #experience-container.timeline-view::before {
+            content: '';
+            position: absolute;
+            left: 15px; top: 8px; bottom: 40px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent) 0%, rgba(16,185,129,0.15) 100%);
+            border-radius: 2px;
+        }
+
+        /* strip card styling */
+        #experience-container.timeline-view .experience-item {
+            border: none;
+            box-shadow: none;
+            padding: 0 0 36px 0;
+            margin-bottom: 0;
+            background: transparent;
+            border-radius: 0;
+        }
+        #experience-container.timeline-view .experience-item:hover {
+            transform: none;
+            box-shadow: none;
+            background: transparent;
+        }
+        #experience-container.timeline-view .experience-item::before {
+            display: none;
+        }
+        #experience-container.timeline-view .experience-item:last-child {
+            padding-bottom: 8px;
+        }
+
+        /* dot */
+        #experience-container.timeline-view .timeline-dot {
+            display: block;
+            position: absolute;
+            left: -35px; top: 5px;
+            width: 16px; height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg-page);
+            box-shadow: 0 0 0 2px var(--accent);
+            z-index: 1;
+            transition: transform 0.2s;
+        }
+        #experience-container.timeline-view .experience-item:hover .timeline-dot {
+            transform: scale(1.25);
+        }
+
+        /* date/role meta line */
+        #experience-container.timeline-view .tl-meta {
+            display: block;
+            font-size: 0.8em;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 8px;
+        }
+
+        /* simplify inner content in timeline mode */
+        #experience-container.timeline-view .experience-header {
+            margin-bottom: 10px;
+            flex-direction: column;
+            gap: 2px;
+        }
+        #experience-container.timeline-view .duration {
+            display: none;
+        }
+        #experience-container.timeline-view .company-info h3 {
+            font-size: 1.15em;
+        }
+        #experience-container.timeline-view .responsibilities {
+            margin-top: 10px;
+        }
+        #experience-container.timeline-view .responsibilities li {
+            font-size: 0.93em;
+            margin-bottom: 8px;
+        }
 
         /* ── SKILLS ── */
         .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
@@ -281,12 +442,17 @@
         /* ── PRINT ── */
         @media print {
             #read-progress, .header-toolbar, .updated-badge,
-            .quote-stage, .section:has(.quote-stage) { display:none !important; }
+            .quote-stage, .section:has(.quote-stage),
+            .view-toggle { display:none !important; }
             body { background:white; color:black; }
             .container { box-shadow:none; border:none; margin:0; max-width:100%; }
             .header { padding:30px 40px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
             .content { padding:30px 40px; }
             .experience-item, .skill-category, .cert-item { box-shadow:none; break-inside:avoid; }
+            /* always print in card view */
+            #experience-container.timeline-view { padding-left:0; }
+            #experience-container.timeline-view::before { display:none; }
+            #experience-container.timeline-view .experience-item { border:1px solid #e5e7eb; padding:20px; margin-bottom:20px; border-radius:8px; }
         }
 
         /* ── RESPONSIVE ── */
@@ -301,13 +467,14 @@
             .contact-buttons { flex-direction:column; gap:8px; }
             .contact-btn { width:100%; text-align:center; font-size:12px; padding:10px; }
             .content { padding:20px 15px; }
-            .section h2 { font-size:1.4em; margin-bottom:20px; }
+            .section > h2, .section-header h2 { font-size:1.4em; }
             .experience-item { padding:15px; }
             .experience-header { flex-direction:column; gap:10px; }
             .skills-grid, .certifications { grid-template-columns:1fr; gap:15px; }
             .quote-stage { padding:28px 18px 22px; }
             .quote-text { font-size:1em; }
             .quote-giant-mark { font-size:5em; }
+            #experience-container.timeline-view { padding-left:32px; }
         }
         @media (min-width:481px) and (max-width:768px) {
             .container { margin:10px; }
@@ -384,9 +551,14 @@
                 style="display:none;"></ul>
         </div>
 
-        <!-- PROFESSIONAL EXPERIENCE -->
+        <!-- PROFESSIONAL EXPERIENCE — with timeline toggle -->
         <div class="section">
-            <h2>Professional Experience</h2>
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <button class="view-toggle" id="expToggle" title="Switch view">
+                    ⬡ Timeline
+                </button>
+            </div>
             <div id="experience-container"
                  hx-get="fragments/experience.html"
                  hx-trigger="load"
@@ -443,18 +615,19 @@
 </div>
 
 <script>
-/* 1 — READING PROGRESS */
+/* ── 1. READING PROGRESS ── */
 window.addEventListener('scroll', () => {
     const d = document.documentElement;
     document.getElementById('read-progress').style.width =
         Math.min(d.scrollTop / (d.scrollHeight - d.clientHeight) * 100, 100) + '%';
 });
 
-/* 2 — DARK / LIGHT MODE */
-const html = document.documentElement;
+/* ── 2. DARK / LIGHT MODE ── */
+const html     = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
-const saved = localStorage.getItem('theme') ||
+const saved    = localStorage.getItem('theme') ||
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
 function applyTheme(t) {
     html.setAttribute('data-theme', t);
     themeBtn.textContent = t === 'dark' ? '☀️ Light' : '🌙 Dark';
@@ -464,7 +637,7 @@ applyTheme(saved);
 themeBtn.addEventListener('click', () =>
     applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
 
-/* 3 — COPY EMAIL */
+/* ── 3. COPY EMAIL ── */
 document.getElementById('emailBtn').addEventListener('click', () => {
     navigator.clipboard.writeText('thippeshad95@gmail.com').then(() => {
         const tick = document.getElementById('copyTick');
@@ -473,11 +646,11 @@ document.getElementById('emailBtn').addEventListener('click', () => {
     });
 });
 
-/* 4 — LAST UPDATED via GitHub API */
+/* ── 4. LAST UPDATED ── */
 fetch('https://api.github.com/repos/thippesh-d/resume/commits?per_page=1')
     .then(r => r.json())
     .then(data => {
-        const iso = data[0]?.commit?.committer?.date;
+        const iso   = data[0]?.commit?.committer?.date;
         const badge = document.getElementById('updatedBadge');
         if (!iso) { badge.textContent = ''; return; }
         const days = Math.floor((Date.now() - new Date(iso)) / 86400000);
@@ -487,10 +660,10 @@ fetch('https://api.github.com/repos/thippesh-d/resume/commits?per_page=1')
     })
     .catch(() => { document.getElementById('updatedBadge').textContent = ''; });
 
-/* 5 — QUOTE ROTATOR */
+/* ── 5. QUOTE ROTATOR ── */
 const DURATION = 20000, TICK = 100;
 let quotes = [], current = 0, elapsed = 0;
-let autoTmr = null, progTmr = null, ready = false;
+let autoTmr = null, progTmr = null, quotesReady = false;
 
 const wrap    = document.getElementById('quoteWrap');
 const numEl   = document.getElementById('quoteNum');
@@ -508,7 +681,7 @@ function buildQuotes() {
         cls:  li.dataset.tagclass
     }));
     goTo(0, false);
-    ready = true;
+    quotesReady = true;
 }
 
 function renderQuote(idx, animate) {
@@ -556,9 +729,36 @@ function goTo(idx, animate) {
 document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1, true));
 document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1, true));
 
-/* Fire after HTMX loads the quotes fragment */
+/* ── 6. TIMELINE TOGGLE ── */
+let timelineActive = false;
+
+function initTimelineToggle() {
+    const btn       = document.getElementById('expToggle');
+    const container = document.getElementById('experience-container');
+    if (!btn || !container) return;
+
+    // Restore saved preference
+    if (localStorage.getItem('expView') === 'timeline') {
+        timelineActive = true;
+        container.classList.add('timeline-view');
+        btn.textContent = '☰ Cards';
+        btn.classList.add('active');
+    }
+
+    btn.addEventListener('click', () => {
+        timelineActive = !timelineActive;
+        container.classList.toggle('timeline-view', timelineActive);
+        btn.textContent = timelineActive ? '☰ Cards' : '⬡ Timeline';
+        btn.classList.toggle('active', timelineActive);
+        localStorage.setItem('expView', timelineActive ? 'timeline' : 'cards');
+    });
+}
+
+/* ── HTMX settle handler ── */
 document.body.addEventListener('htmx:afterSettle', e => {
-    if (e.detail.elt.id === 'quotes-data' && !ready) buildQuotes();
+    const id = e.detail.elt.id;
+    if (id === 'quotes-data' && !quotesReady) buildQuotes();
+    if (id === 'experience-container') initTimelineToggle();
 });
 </script>
 </body>
