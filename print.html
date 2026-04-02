@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thippesha D – Resume (Print)</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11pt;
+            line-height: 1.55;
+            color: #1a1a1a;
+            background: white;
+            padding: 0;
+        }
+
+        /* ── SCREEN PREVIEW WRAPPER ── */
+        @media screen {
+            body { background: #f0f0f0; padding: 20px; }
+            .page {
+                max-width: 800px;
+                margin: 0 auto;
+                background: white;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            .print-notice {
+                background: #1f2937;
+                color: #10b981;
+                text-align: center;
+                padding: 10px;
+                font-size: 12px;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .page { box-shadow: none; border-radius: 0; }
+            .print-notice { display: none; }
+        }
+
+        /* ── HEADER ── */
+        .header {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+            color: white;
+            padding: 28px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .header-left h1 {
+            font-size: 22pt;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .header-left .role {
+            color: #10b981;
+            font-size: 11pt;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 9pt;
+            color: rgba(255,255,255,0.75);
+        }
+        .contact-row span { display: flex; align-items: center; gap: 4px; }
+
+        /* QR code block */
+        .qr-block {
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .qr-block img {
+            width: 90px; height: 90px;
+            border-radius: 6px;
+            background: white;
+            padding: 4px;
+            display: block;
+        }
+        .qr-block p {
+            font-size: 7.5pt;
+            color: rgba(255,255,255,0.5);
+            margin-top: 5px;
+            letter-spacing: 0.3px;
+        }
+
+        /* ── BODY ── */
+        .body { padding: 24px 32px 32px; }
+
+        /* section */
+        .section { margin-bottom: 22px; }
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #1f2937;
+            border-bottom: 2px solid #10b981;
+            padding-bottom: 4px;
+            margin-bottom: 14px;
+        }
+
+        /* experience */
+        .exp-item { margin-bottom: 16px; break-inside: avoid; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; margin-bottom: 2px; }
+        .exp-company { font-weight: 700; font-size: 10.5pt; color: #1f2937; }
+        .exp-period  { font-size: 8.5pt; color: #6b7280; white-space: nowrap; }
+        .exp-role    { font-size: 9.5pt; color: #10b981; font-weight: 600; margin-bottom: 5px; }
+        .exp-list    { padding-left: 16px; }
+        .exp-list li { font-size: 9pt; color: #374151; margin-bottom: 3px; line-height: 1.5; }
+        .exp-list li::marker { color: #10b981; }
+
+        /* skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .skill-block h4 { font-size: 9pt; font-weight: 700; color: #1f2937; margin-bottom: 5px; }
+        .skill-block ul { list-style: none; }
+        .skill-block li { font-size: 8.5pt; color: #4b5563; padding: 2px 0; position: relative; padding-left: 12px; }
+        .skill-block li::before { content: '▪'; color: #10b981; position: absolute; left: 0; }
+
+        /* certifications */
+        .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .cert-item { break-inside: avoid; }
+        .cert-item h4 { font-size: 9pt; font-weight: 700; color: #1f2937; margin-bottom: 3px; }
+        .cert-item p  { font-size: 8.5pt; color: #6b7280; line-height: 1.4; }
+
+        /* competencies */
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag {
+            background: #f3f4f6; border: 1px solid #e5e7eb;
+            color: #374151; padding: 3px 10px;
+            border-radius: 20px; font-size: 8.5pt; font-weight: 500;
+            -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        }
+
+        /* education */
+        .edu-title { font-weight: 700; font-size: 10pt; color: #1f2937; margin-bottom: 3px; }
+        .edu-detail { font-size: 9pt; color: #6b7280; margin-bottom: 2px; }
+
+        /* footer */
+        .print-footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 10px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8pt;
+            color: #9ca3af;
+        }
+        .print-footer a { color: #10b981; text-decoration: none; }
+
+        /* page break hints */
+        @media print {
+            .section { break-inside: avoid; }
+            .skills-grid, .cert-grid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- screen-only notice -->
+    <div class="print-notice">📄 Print preview — use Ctrl+P / Cmd+P or the browser print dialog &nbsp;·&nbsp; <a href="/" style="color:#6ee7b7">← Back to resume</a></div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <h1>Thippesha D</h1>
+            <div class="role">ServiceNow Test Automation Specialist</div>
+            <div class="contact-row">
+                <span>📞 70901 20237</span>
+                <span>✉️ thippeshad95@gmail.com</span>
+                <span>🐙 github.com/thippesh-d</span>
+                <span>💼 linkedin.com/in/thippesha</span>
+                <span>📍 Bengaluru, India</span>
+            </div>
+        </div>
+        <div class="qr-block">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://resume.thippesha.in/&color=1f2937&bgcolor=ffffff&qzone=1" alt="QR – resume.thippesha.in">
+            <p>resume.thippesha.in</p>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+
+        <!-- EXPERIENCE -->
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-company">Intime Tec (ServiceNow Partner)</span>
+                    <span class="exp-period">Oct 2021 – Present · 3 Yrs 5 Mos · Bengaluru</span>
+                </div>
+                <div class="exp-role">Software Engineer &nbsp;(Oct 2023 – Present)</div>
+                <ul class="exp-list">
+                    <li>Executed end-to-end testing of ServiceNow applications ensuring platform reliability and performance</li>
+                    <li>Developed and maintained automated test frameworks using Java Selenium, improving efficiency by 40%</li>
+                    <li>Orchestrated integration testing between ServiceNow and external systems ensuring seamless data flow</li>
+                    <li>Architected comprehensive test suites for ITSM, ITOM, and CSM modules</li>
+                    <li>Led release testing initiatives ensuring zero-defect deployments to production</li>
+                    <li>Implemented regression testing protocols to maintain application stability across updates</li>
+                </ul>
+                <div class="exp-role" style="margin-top:8px;">Junior Software Engineer &nbsp;(Oct 2022 – Oct 2023)</div>
+                <ul class="exp-list">
+                    <li>Automated critical test scenarios using ServiceNow's Automated Test Framework (ATF)</li>
+                    <li>Validated integration points between ServiceNow and third-party systems via REST/SOAP APIs</li>
+                    <li>Delivered comprehensive test reports and metrics to stakeholders and clients</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-company">Pacecom Technologies Pvt Ltd</span>
+                    <span class="exp-period">Oct 2021 – Aug 2022 · 11 Mos · Bengaluru</span>
+                </div>
+                <div class="exp-role">Trainee Engineer</div>
+                <ul class="exp-list">
+                    <li>Conducted manual testing of AI-powered applications, focusing on data accuracy and system behavior</li>
+                    <li>Identified and documented system defects with detailed reproduction steps and impact analysis</li>
+                    <li>Collaborated with development teams to resolve critical issues and improve application quality</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section">
+            <div class="section-title">Technical Expertise</div>
+            <div class="skills-grid">
+                <div class="skill-block">
+                    <h4>ServiceNow Modules</h4>
+                    <ul>
+                        <li>Catalog Items Management</li>
+                        <li>Asset Lifecycle Management</li>
+                        <li>Incident Management</li>
+                        <li>Change &amp; Problem Management</li>
+                        <li>ITSM Platform Testing</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4>Testing Methodologies</h4>
+                    <ul>
+                        <li>Regression &amp; Release Testing</li>
+                        <li>Upgrade &amp; Smoke Testing</li>
+                        <li>Sanity Testing</li>
+                        <li>API Testing (REST/SOAP)</li>
+                        <li>End-to-End Testing</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4>Automation &amp; Tools</h4>
+                    <ul>
+                        <li>Java Selenium Framework</li>
+                        <li>ServiceNow ATF</li>
+                        <li>CI/CD Integration</li>
+                        <li>Git &amp; GitHub</li>
+                        <li>REST API Testing Tools</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4>ServiceNow Expertise</h4>
+                    <ul>
+                        <li>Platform Administration</li>
+                        <li>Instance Management</li>
+                        <li>Update Set Management</li>
+                        <li>Client Scripts &amp; Business Rules</li>
+                        <li>ServiceNow Workflows</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4>Quality Assurance</h4>
+                    <ul>
+                        <li>Functional &amp; Integration Testing</li>
+                        <li>Defect Management</li>
+                        <li>Test Case Design</li>
+                        <li>Test Documentation</li>
+                        <li>Performance Testing</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li>Java &amp; Selenium WebDriver</li>
+                        <li>Linux Command Line</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>XPath &amp; CSS Selectors</li>
+                        <li>HTMX</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-title">Professional Certifications</div>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <h4>ITIL Foundation Level</h4>
+                    <p>PeopleCert · Nov 2024</p>
+                    <p>ID: GR671714965TD</p>
+                </div>
+                <div class="cert-item">
+                    <h4>ServiceNow Certified System Administrator</h4>
+                    <p>Nasscom FutureSkills · Sep 2023</p>
+                    <p>ID: FSP/2024/7/4940852</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Certified ScrumMaster (CSM)</h4>
+                    <p>Scrum Alliance · Jun 2023</p>
+                    <p>ID: 1803461</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPETENCIES -->
+        <div class="section">
+            <div class="section-title">Core Competencies</div>
+            <div class="tags">
+                <span class="tag">Agile Leadership</span>
+                <span class="tag">Problem Resolution</span>
+                <span class="tag">System Analysis</span>
+                <span class="tag">Team Collaboration</span>
+                <span class="tag">Process Optimization</span>
+                <span class="tag">Client Relations</span>
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="edu-title">Bachelor of Engineering — Electronics &amp; Communication</div>
+            <div class="edu-detail">Visvesvaraya Technological University, Belagavi, India · 2021</div>
+            <div class="edu-detail">Relevant Coursework: Software Engineering · System Design · Digital Communications</div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="print-footer">
+        <span>Thippesha D &nbsp;·&nbsp; thippeshad95@gmail.com &nbsp;·&nbsp; Bengaluru, India</span>
+        <span>Scan QR or visit <a href="https://resume.thippesha.in">resume.thippesha.in</a> for the interactive version</span>
+    </div>
+
+</div>
+
+<script>
+    // Auto-open print dialog when page loads
+    window.addEventListener('load', () => {
+        setTimeout(() => window.print(), 600);
+    });
+</script>
+</body>
+</html>
